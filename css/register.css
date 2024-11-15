@@ -1,0 +1,184 @@
+/* Global Styles */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    /* Set background image */
+    background: url('image/bg.png') no-repeat center center fixed;
+    background-size: cover; /* Ensures the image covers the whole screen */
+    height: 100%;
+    position: relative; /* Allows for absolute positioning of the overlay */
+}
+
+/* Darkening the background image with an overlay */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Darken the background with transparency */
+    z-index: -1; /* Ensure overlay is behind the content */
+}
+
+/* Main Content Container */
+.container {
+    width: 100%;
+    max-width: 380px; /* Reduced container width for a smaller look */
+    margin: 30px auto; /* Reduced margin for better compactness */
+    padding: 15px; /* Slightly reduced padding */
+    background-color: #ffffff;
+    border-radius: 12px; /* Slightly smaller radius */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-4px); /* Reduced hover effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    margin-bottom: 15px; /* Reduced space below the header */
+    font-size: 1.8em; /* Reduced font size for header */
+    color: #2c3e50;
+    letter-spacing: 1px;
+}
+
+/* Form Styling */
+.signup-container {
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 15px; /* Reduced margin for better spacing */
+}
+
+.input-group label {
+    display: block;
+    font-size: 1em; /* Reduced label font size */
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: calc(100% - 24px); /* Full width with padding compensation */
+    max-width: 100%;
+    padding: 10px; /* Slightly reduced padding */
+    border: 1px solid #bdc3c7;
+    border-radius: 8px; /* Smaller border radius */
+    font-size: 0.95em; /* Reduced font size for inputs */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.input-group input:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Button Styling */
+.btn {
+    display: block;
+    width: calc(100% - 40px); /* Reduced button width */
+    text-align: center;
+    max-width: 100%;
+    padding: 12px; /* Reduced padding */
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px; /* Slightly smaller radius */
+    font-size: 1em; /* Smaller font size */
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Link Styling */
+.links {
+    margin-top: 12px; /* Reduced margin for compactness */
+    font-size: 1em; /* Reduced font size */
+    text-align: center;
+    font-style: italic;
+}
+
+.links a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #2980b9;
+}
+
+/* Footer */
+footer {
+    background: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 10px 12px; /* Reduced padding for compact footer */
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+    font-size: 0.85em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px; /* Less padding for smaller screens */
+    }
+
+    header h1 {
+        font-size: 1.6em; /* Reduced header font size */
+    }
+
+    .btn {
+        padding: 12px;
+    }
+
+    .input-group input {
+        font-size: 0.95em; /* Slightly smaller font size on mobile */
+        width: 100%; /* Ensure inputs take full width */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 85%;
+        padding: 15px; /* Further reduce padding */
+    }
+
+    header h1 {
+        font-size: 1.4em; /* Further reduce header font size */
+    }
+
+    .btn {
+        font-size: 1em; /* Smaller button font size */
+        padding: 10px; /* Smaller padding */
+    }
+
+    .input-group input {
+        width: 100%; /* Inputs take full width on smaller screens */
+    }
+}
