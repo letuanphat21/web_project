@@ -1,0 +1,62 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="css/forgotpass.css">
+    </head>
+    <body>
+    <!-- Thẻ thông báo ở phía trên cùng của trang -->
+    <div id="notification-popup">
+        Verification code sent to your email! Please check.
+        <span class="close-btn" onclick="closeNotification('notification-popup')">&times;</span>
+    </div>
+    <div id="notification-popup-err">
+        Please enter a valid email with "@".
+        <span class="close-btn" onclick="closeNotification('notification-popup-err')">&times;</span>
+    </div>
+
+    <div class="tab-container">
+        <!-- Tab nhập email -->
+        <div class="tab-content" id="email-tab">
+        <h1>Forgot password</h1>
+        <input type="text" id="userId" placeholder="Enter your ID or Email">
+        <button class="btn send-btn" onclick="sendVerificationCode()">Send email</button>
+        <button class="btn back-btn" id="loginButton">Back</button>
+        </div>
+    </div>
+
+    <script>
+        function sendVerificationCode() {
+        const userIdInput = document.getElementById("userId").value;
+        const notificationPopup = document.getElementById("notification-popup");
+        const errorPopup = document.getElementById("notification-popup-err");
+
+        if (!userIdInput || !userIdInput.includes('@')) {
+            // Hiển thị thông báo lỗi nếu khung nhập liệu trống hoặc không có ký tự '@'
+            errorPopup.style.display = "block";
+            notificationPopup.style.display = "none";
+        } else {
+            // Hiển thị thông báo thành công
+            errorPopup.style.display = "none";
+            notificationPopup.style.display = "block";
+
+            // Ẩn thẻ thông báo sau 3 giây
+            setTimeout(() => {
+            notificationPopup.style.display = "none";
+            }, 3000);
+        }
+        }
+
+        function closeNotification(popupId) {
+        document.getElementById(popupId).style.display = "none";
+        }
+    </script>
+    <script src="js/forgotpass.js">
+
+
+
+    </script>
+    </body>
+    </html>

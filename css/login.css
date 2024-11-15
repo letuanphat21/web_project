@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: #eafaf1; /* Màu nền trắng nhẹ với chút xanh lá */
+	color: #0b6623;
+}
+
+.login-container {
+	width: 350px;
+	padding: 30px;
+	background: #ffffff;
+	/* Màu trắng để tạo tương phản cho khung đăng nhập */
+	border-radius: 10px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	color: #0b6623; /* Màu chữ xanh lá cây đậm */
+}
+
+.login-container h2 {
+	margin-bottom: 20px;
+	font-size: 24px;
+	color: #0b6623; /* Màu chữ xanh lá */
+}
+
+.input-field {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.input-field input {
+	width: 100%;
+	padding: 12px 40px;
+	border: 1px solid #0b6623; /* Viền xanh lá cây */
+	border-radius: 5px;
+	outline: none;
+	background: #f2fdf4; /* Màu nền xanh lá nhạt cho các ô input */
+	color: #0b6623; /* Màu chữ xanh lá */
+}
+
+/* Đổi màu placeholder thành xanh lá nhạt */
+::placeholder {
+	color: #a3d7a7; /* Màu placeholder xanh lá nhạt */
+	opacity: 1;
+}
+
+.input-field i {
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	transform: translateY(-50%);
+	color: #0b6623; /* Màu icon xanh lá cây đậm */
+}
+
+.options {
+	display: flex;
+	justify-content: space-between;
+	font-size: 14px;
+	margin-bottom: 20px;
+}
+
+.options a {
+	color: #0b6623; /* Màu liên kết xanh lá */
+	text-decoration: none;
+}
+
+.options a:hover {
+	text-decoration: underline;
+}
+
+.login-button {
+	width: 100%;
+	padding: 12px;
+	background: #28a745; /* Màu xanh lá cây cho nút */
+	border: none;
+	border-radius: 5px;
+	color: #ffffff; /* Màu chữ trắng */
+	font-size: 16px;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+.login-button:hover {
+	background: #218838; /* Màu xanh lá cây đậm hơn khi hover */
+}
+
+.register-link {
+	font-size: 14px;
+	margin-top: 15px;
+	color: #0b6623;
+}
+
+.register-link a {
+	color: #0b6623; /* Màu liên kết xanh lá */
+	text-decoration: underline;
+}
