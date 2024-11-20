@@ -12,17 +12,6 @@ h1, h2 {
     margin: 0;
     color: #333;
 }
-
-a {
-    text-decoration: none;
-    color: #3fa1f1;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #ffffff;
-}
-
 .navbar {
     position: fixed;
     top: 0;
@@ -30,44 +19,15 @@ a:hover {
     z-index: 10;
     background-color: #ffffff;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
 }
 
-/* Navbar logo and links */
-.navbar .logo {
-    flex: 1;
-}
-
-.navbar .nav-links {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-}
-
-.navbar .nav-links a {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #3fa1f1;
-    border-radius: 25px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.navbar .nav-links a:hover {
-    background-color: #007bff;
-    color: white;
-}
-
-/* Search Bar */
 .navbar .search-bar {
     display: flex;
     align-items: center;
     width: 400px;
+    /* Đặt độ rộng cho thanh tìm kiếm */
     margin: 0 auto;
+    /* Căn giữa thanh tìm kiếm */
 }
 
 .navbar .search-bar input {
@@ -99,127 +59,16 @@ a:hover {
     background-color: #0056b3;
 }
 
-/* Tab Section Styling */
 .tab-section {
-    margin-top: 20px;
     display: flex;
     justify-content: center;
-    margin: 50px 0 30px;
+    margin: 30px 0;
 }
 
 .tab-section .nav {
     gap: 15px;
-    padding: 0;
-    display: flex; /* Ensure the nav items are laid out horizontally */
 }
 
-/* Styling for Tab Links */
-.tab-section .nav-item {
-    list-style: none;
-}
-
-.tab-section .nav-link {
-    color: #3fa1f1;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.tab-section .nav-link.active {
-    background-color: #3fa1f1;
-    color: white;
-}
-
-.tab-section .nav-link:hover {
-    background-color: #007bff;
-    color: white;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: stretch; /* Align navbar items to stretch */
-        padding: 15px;
-    }
-
-    .navbar .search-bar {
-        width: 100%; /* Make search bar full width */
-        margin-bottom: 10px;
-    }
-
-    .navbar .nav-links {
-        display: none; /* Hide nav links initially */
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .navbar.active .nav-links {
-        display: flex; /* Display nav links when navbar is active */
-    }
-
-    .navbar .nav-links a {
-        padding: 10px;
-        width: 100%;
-        text-align: center;
-        border-top: 1px solid #ddd;
-    }
-
-    .navbar .nav-links a:hover {
-        background-color: #007bff;
-        color: white;
-    }
-
-    .navbar .logo {
-        margin-bottom: 10px; /* Ensure space between logo and nav */
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar .search-bar input {
-        padding: 8px 12px;
-    }
-
-    .tab-section .nav-link {
-        font-size: 14px;
-    }
-
-    .navbar {
-        padding: 10px 15px; /* Adjust padding for smaller screens */
-    }
-
-    .navbar .nav-links a {
-        font-size: 14px;
-    }
-}
-
-/* Mobile navbar improvements */
-@media (max-width: 768px) {
-    .navbar .search-bar {
-        margin-top: 10px;
-        width: 100%;
-    }
-
-    .navbar .nav-links {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        margin-top: 15px;
-    }
-
-    .navbar .nav-links a {
-        padding: 10px 20px;
-        text-align: center;
-        border-top: 1px solid #ddd;
-    }
-
-    .navbar .nav-links a:hover {
-        background-color: #007bff;
-        color: white;
-    }
-}
 
 /* Container for the Page Content */
 .container {
