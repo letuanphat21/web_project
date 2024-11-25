@@ -1,0 +1,59 @@
+/* Reset một số kiểu mặc định của trình duyệt */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin: 20px;
+}
+
+.book-details {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-details h2 {
+    color: #333;
+}
+
+.book-details p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.book-details ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.book-details ul li {
+    padding: 5px 0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
