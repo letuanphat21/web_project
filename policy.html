@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Manager</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/policy.css">
+    
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="index.html">
+            <img src="image/logo.webp" alt="Library Logo" style="height:50px;">
+        </a>
+        <div class="search-bar">
+            <input type="text" class="form-control" placeholder="Tìm kiếm sách, tác giả...">
+            <button class="btn-search">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+        <a href="login.html" class="btn btn-primary ml-3">Login</a>
+    </nav>
+
+    <!-- Tabs Section -->
+    <div class="tab-section">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="genreDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Category
+                </a>
+                <div class="dropdown-menu" aria-labelledby="genreDropdown">
+                    <a class="dropdown-item" href="#">Văn học</a>
+                    <a class="dropdown-item" href="#">Khoa học</a>
+                    <a class="dropdown-item" href="#">Lịch sử</a>
+                    <a class="dropdown-item" href="#">Thiếu nhi</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="policy.html">Policy</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Policy Section -->
+    <div class="container mt-4">
+        <div class="policy-section">
+            <h2>Chào Mừng</h2>
+            <p>Chào mừng bạn đến với nền tảng Quản Lý Sách Trực Tuyến. Chính sách này nêu rõ các điều khoản và điều kiện sử dụng dịch vụ của chúng tôi.</p>
+
+            <h2>Trách Nhiệm Người Dùng</h2>
+            <ul>
+                <li><i class="fa-solid fa-user-shield"></i> Giữ bí mật thông tin tài khoản của bạn.</li>
+                <li><i class="fa-solid fa-gavel"></i> Đảm bảo rằng việc sử dụng nền tảng tuân thủ các luật pháp và quy định hiện hành.</li>
+                <li><i class="fa-solid fa-exclamation-circle"></i> Báo cáo ngay lập tức nếu phát hiện tài khoản bị sử dụng trái phép.</li>
+            </ul>
+
+            <h2>Quyền Riêng Tư Dữ Liệu</h2>
+            <p><i class="fa-solid fa-lock"></i> Chúng tôi cam kết bảo vệ quyền riêng tư của bạn. Tất cả dữ liệu cá nhân được thu thập sẽ được xử lý theo chính sách quyền riêng tư của chúng tôi.</p>
+
+            <h2>Quản Lý Nội Dung</h2>
+            <p><i class="fa-solid fa-upload"></i> Người dùng chịu trách nhiệm về nội dung mà họ tải lên. Chúng tôi có quyền xóa bất kỳ nội dung nào vi phạm điều khoản sử dụng.</p>
+
+            <h2>Thay Đổi Chính Sách</h2>
+            <p><i class="fa-solid fa-pen"></i> Chính sách này có thể được cập nhật định kỳ. Người dùng sẽ được thông báo về các thay đổi quan trọng qua nền tảng của chúng tôi.</p>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row footer-section">
+                <div class="col-md-4 footer-logo">
+                    <a href="#"><img src="image/logo.webp" alt="Library Logo"></a>
+                    <p>Your one-stop solution for digital library management.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Information</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-map-marker"></i> 123 Library St, Booktown, Country</li>
+                        <li><i class="fa fa-phone"></i> +123 456 7890</li>
+                        <li><i class="fa fa-envelope"></i> info@librarymanager.com</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-line"></div>
+            <div class="text-center mt-4">
+                <p>&copy; 2023 Library Manager. All rights reserved.</p>
+                <div>
+                    <a href="#" class="mx-2"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="mx-2"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="mx-2"><i class="fa fa-instagram"></i></a>
+                    <a href="#" class="mx-2"><i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Font Awesome for icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+</body>
+
+</html>

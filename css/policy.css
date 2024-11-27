@@ -1,0 +1,31 @@
+.policy-section {
+    padding: 40px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tạo hiệu ứng đổ bóng */
+}
+
+.policy-section h2 {
+    border-bottom: 3px solid #007bff; /* Đường gạch chân dưới tiêu đề */
+    padding-bottom: 10px; /* Khoảng cách dưới tiêu đề */
+    margin-bottom: 20px; /* Khoảng cách giữa tiêu đề và phần nội dung dưới */
+    color: #007bff; /* Màu chữ tiêu đề */
+}
+
+.policy-section ul {
+    list-style-type: none; /* Loại bỏ ký hiệu mặc định của danh sách */
+    padding-left: 0;
+}
+
+.policy-section ul li {
+    margin: 10px 0; /* Khoảng cách giữa các mục trong danh sách */
+    padding: 10px; /* Khoảng cách bên trong các mục danh sách */
+    border: 1px solid #ddd; /* Viền xung quanh mục danh sách */
+    border-radius: 5px; /* Bo góc nhẹ */
+    background-color: #f8f9fa; /* Màu nền sáng */
+}
+
+.policy-section p {
+    margin-bottom: 20px; /* Khoảng cách giữa các đoạn văn */
+    line-height: 1.6; /* Tăng độ thoáng giữa các dòng */
+}

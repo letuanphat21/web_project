@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/category.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="index.html">
+            <img src="image/logo.webp" alt="Library Logo" style="height:50px;">
+        </a>
+        <div class="search-bar">
+            <input type="text" class="form-control" placeholder="Tìm kiếm sách, tác giả...">
+            <button class="btn-search">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+        <a href="login.html" class="btn btn-primary ml-3">Login</a>
+    </nav>
+
+    <div class="tab-section">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link " href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="category.html" id="genreDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Category
+                </a>
+                <div class="dropdown-menu" aria-labelledby="genreDropdown">
+                    <a class="dropdown-item" href="booksGenere/literature.html">Văn học</a>
+                    <a class="dropdown-item" href="booksGenere/science.html">Khoa học</a>
+                    <a class="dropdown-item" href="booksGenere/history.html">Lịch sử</a>
+                    <a class="dropdown-item" href="booksGenere/children.html">Thiếu nhi</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="policy.html">Policy</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+        </ul>
+    </div>	
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="" class="modal-image-img">
+                    <img id="modalAltImage" src="" alt="" class="modal-image-img">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modalTitle" class="modal-title"></h2>
+                    <p id="modalAuthor" class="modal-author"></p>
+                    <p id="modalDescription" class="modal-description"></p>
+                    <div class="modal-actions">
+                        <button id="cancelButton" class="btn btn-secondary">Cancel</button>
+                        <button id="addToCartButton" class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <!-- Hero Section -->
+    <div class="hero-section text-center text-white" style="background: url('image/library.png') no-repeat center center/cover; padding: 225px 20px;">
+        <div class="hero-overlay"></div> <!-- Add an overlay to darken the background -->
+        <h1>Welcome to Our Library</h1>
+        <p>Explore a world of knowledge and imagination</p>
+        <a href="#categories" class="btn btn-primary btn-lg mt-3">Discover Categories</a>
+    </div>
+<!-- Category Section -->
+<div class="container">
+    <h1 class="text-center mt-4">Explore Categories</h1>
+    <div class="row mt-5">
+        <!-- Literature Category -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card shadow-sm h-100">
+                <img src="image/category/literature.png" class="card-img-top" alt="Văn học">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Literature</h5>
+                    <a href="booksGenere/literature.html" class="btn btn-primary">Explore</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Science Category -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card shadow-sm h-100">
+                <img src="image/category/science.png" class="card-img-top" alt="Khoa học">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Science</h5>
+                    <a href="booksGenere/science.html" class="btn btn-primary">Explore</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- History Category -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card shadow-sm h-100">
+                <img src="image/category/history.png" class="card-img-top" alt="Lịch sử">
+                <div class="card-body text-center">
+                    <h5 class="card-title">History</h5>
+                    <a href="booksGenere/history.html" class="btn btn-primary">Explore</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Children Category -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="card shadow-sm h-100">
+                <img src="image/category/children.png" class="card-img-top" alt="Thiếu nhi">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Children</h5>
+                    <a href="booksGenere/children.html" class="btn btn-primary">Explore</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	
+
+    <!-- Genre Section -->
+    <div class="container mt-5">
+        <h2 class="text-center">Popular Genres</h2>
+        <div class="row mt-4">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card shadow-sm h-100">
+                    <img src="image/category/fiction.png" class="card-img-top" alt="Thiếu nhi">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Fiction</h5>
+                        <a href="booksGenere/fiction.html" class="btn btn-primary">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card shadow-sm h-100">
+                    <img src="image/category/mentality.png" class="card-img-top" alt="Thiếu nhi">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Mentality</h5>
+                        <a href="booksGenere/mentality.html" class="btn btn-primary">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card shadow-sm h-100">
+                    <img src="image/category/sport.png" class="card-img-top" alt="Thiếu nhi">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Sport</h5>
+                        <a href="booksGenere/sport.html" class="btn btn-primary">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card shadow-sm h-100">
+                    <img src="image/category/lifeskills.png" class="card-img-top" alt="Thiếu nhi">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Life Skills</h5>
+                        <a href="booksGenere/lifeskills.html" class="btn btn-primary">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer style="background-color: #343a40; color: #fff; padding: 20px 20px; font-size: 16px;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 20px;">
+            <!-- Company Section -->
+            <div style="flex: 1; min-width: 200px; max-width: 300px;">
+                <h3 style="color: #3fa1f1; font-size: 20px; margin-bottom: 20px;">Company</h3>
+                <ul style="list-style: none; padding: 0; line-height: 1.8;">
+                    <li>
+                        <a href="#" style="text-decoration: none; color: #aaa; transition: color 0.3s;">
+                            <i class="fas fa-info-circle" style="margin-right: 8px;"></i> About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" style="text-decoration: none; color: #aaa; transition: color 0.3s;">
+                            <i class="fas fa-phone-alt" style="margin-right: 8px;"></i> Contact Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" style="text-decoration: none; color: #aaa; transition: color 0.3s;">
+                            <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> Reservation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" style="text-decoration: none; color: #aaa; transition: color 0.3s;">
+                            <i class="fas fa-shield-alt" style="margin-right: 8px;"></i> Privacy Policy
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" style="text-decoration: none; color: #aaa; transition: color 0.3s;">
+                            <i class="fas fa-file-contract" style="margin-right: 8px;"></i> Terms & Conditions
+                        </a>
+                    </li>
+                </ul>
+            </div>            
+    
+            <!-- Contact Section -->
+            <div style="flex: 1; min-width: 200px; max-width: 300px;">
+                <h3 style="color: #3fa1f1; font-size: 20px; margin-bottom: 20px;">Contact</h3>
+                <p style="margin: 10px 0; color: #bbb;">
+                    <i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> VQCR+GP6, khu phố 6, Linh Trung, Thủ Đức, Hồ Chí Minh, Việt Nam
+                </p>
+                <p style="margin: 10px 0; color: #bbb;">
+                    <i class="fas fa-phone-alt" style="margin-right: 8px;"></i> 028 3896 6780
+                </p>
+                <p style="margin: 10px 0; color: #bbb;">
+                    <i class="fas fa-envelope" style="margin-right: 8px;"></i> vp@hcmuaf.edu.vn
+                </p>
+                <!-- Social media icons -->
+                <div style="margin-top: 15px; display: flex; gap: 15px;">
+                    <a href="#" style="color: #fff; font-size: 20px;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="color: #fff; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+                    <a href="#" style="color: #fff; font-size: 20px;"><i class="fab fa-youtube"></i></a>
+                    <a href="#" style="color: #fff; font-size: 20px;"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>            
+
+            <!-- Opening Section -->
+            <div style="flex: 1; min-width: 200px; max-width: 300px;">
+                <h3 style="color: #3fa1f1; font-size: 20px; margin-bottom: 20px;">Opening</h3>
+                <p style="margin: 10px 0; color: #bbb;">
+                    <i class="fas fa-clock" style="margin-right: 8px;"></i> Mon - Fri: 7:00 AM - 5:30 PM
+                </p>
+                <p style="margin: 10px 0; color: #bbb;">
+                    <i class="fas fa-clock" style="margin-right: 8px;"></i> Sunday: Closed
+                </p>
+            </div>            
+
+            <!-- Newsletter Section -->
+            <div style="flex: 1; min-width: 200px; max-width: 300px;">
+                <h3 style="color: #3fa1f1; font-size: 20px; margin-bottom: 20px;">If you're intersted</h3>
+                <p style="margin-bottom: 15px; color: #bbb;">Sign up for updates and promotions.</p>
+                <form class="newsletter-form">
+                    <input 
+                        type="email" 
+                        placeholder="Enter your email" 
+                        class="newsletter-input" 
+                        required>
+                    <button class="newsletter-button">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    
+        <div style="text-align: left; margin-top: 10px; margin-left: 50px; color: #888; font-size: 14px;">
+            © 2024 Group2. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/category.js"></script>
+</body>
+</html>
