@@ -84,6 +84,16 @@ h1, h2 {
     background-color: #0056b3;
 }
 
+.tab-section {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.tab-section .nav {
+    gap: 15px;
+}
+
 .carousel-item img {
     object-fit: cover; /* Ensures the image covers the area without stretching */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow around the image */
