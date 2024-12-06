@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books Returned</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/listBook.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <div class="header d-flex justify-content-between py-3">
+    <div class="left">
+      <h5>Trang Admin</h5>
+    </div>
+    <div class="right">
+      <h5>Hello Admin</h5>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar d-flex flex-column justify-content-between py-4 px-3">
+    <h3 class="text-center mb-4">Admin Panel</h3>
+    <a href="admin.html" >Control Table</a>
+    <a href="listcategory.html">Category</a>
+    <a href="locationlibrary.html">Location of Libraries</a>
+    <a href="listBook.html">List Book</a>
+    <a href="#borrowed-books">Books Borrowed</a>
+    <a href="booksRetuned.html" class="active">Books Returned</a>
+    <a href="login.html">Logout</a>
+  </div>
+
+  <!-- Wrapper -->
+  <div class="wrapper d-flex">
+    <div class="content flex-grow-1">
+      <h1>Books Returned</h1>
+      <!-- Bộ lọc -->
+      <div class="filters mb-3">
+        <label for="dateFilter">Filter by return date:</label>
+        <input type="date" id="dateFilter" class="form-control">
+      </div>
+      <!-- Bảng hiển thị -->
+      <table id="booksReturnedTable" class="display">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Return Date</th>
+            <th>Borrower</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>The Great Gatsby</td>
+            <td>F. Scott Fitzgerald</td>
+            <td>2024-12-01</td>
+            <td>John Doe</td>
+            <td>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>To Kill a Mockingbird</td>
+            <td>Harper Lee</td>
+            <td>2024-11-20</td>
+            <td>Jane Smith</td>
+            <td>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>1984</td>
+            <td>George Orwell</td>
+            <td>2024-11-15</td>
+            <td>Michael Johnson</td>
+            <td>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Pride and Prejudice</td>
+            <td>Jane Austen</td>
+            <td>2024-10-30</td>
+            <td>Emily Davis</td>
+            <td>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>The Catcher in the Rye</td>
+            <td>J.D. Salinger</td>
+            <td>2024-10-25</td>
+            <td>Chris Brown</td>
+            <td>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>The Hobbit</td>
+            <td>J.R.R. Tolkien</td>
+            <td>2024-09-18</td>
+            <td>Sarah Wilson</td>
+            <td>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Moby-Dick</td>
+            <td>Herman Melville</td>
+            <td>2024-08-15</td>
+            <td>David Martinez</td>
+            <td>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>War and Peace</td>
+            <td>Leo Tolstoy</td>
+            <td>2024-07-20</td>
+            <td>Olivia Taylor</td>
+            <td>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Ulysses</td>
+            <td>James Joyce</td>
+            <td>2024-06-05</td>
+            <td>Liam White</td>
+            <td>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>The Alchemist</td>
+            <td>Paulo Coelho</td>
+            <td>2024-05-15</td>
+            <td>Emma Harris</td>
+            <td>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Harry Potter and the Sorcerer's Stone</td>
+            <td>J.K. Rowling</td>
+            <td>2024-04-12</td>
+            <td>Benjamin Carter</td>
+            <td>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>The Lord of the Rings</td>
+            <td>J.R.R. Tolkien</td>
+            <td>2024-03-22</td>
+            <td>Charlotte Thomas</td>
+            <td>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>The Chronicles of Narnia</td>
+            <td>C.S. Lewis</td>
+            <td>2024-02-28</td>
+            <td>Alexander Scott</td>
+            <td>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Frankenstein</td>
+            <td>Mary Shelley</td>
+            <td>2024-02-15</td>
+            <td>Isabella Moore</td>
+            <td>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>Dracula</td>
+            <td>Bram Stoker</td>
+            <td>2024-01-30</td>
+            <td>James Taylor</td>
+            <td>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td>The Adventures of Huckleberry Finn</td>
+            <td>Mark Twain</td>
+            <td>2024-01-10</td>
+            <td>Sophia Anderson</td>
+            <td>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td>The Little Prince</td>
+            <td>Antoine de Saint-Exupéry</td>
+            <td>2024-01-05</td>
+            <td>Jack Walker</td>
+            <td>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>18</td>
+            <td>Jane Eyre</td>
+            <td>Charlotte Brontë</td>
+            <td>2023-12-18</td>
+            <td>Amelia Martin</td>
+            <td>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>19</td>
+            <td>The Picture of Dorian Gray</td>
+            <td>Oscar Wilde</td>
+            <td>2023-12-05</td>
+            <td>Lucas Perez</td>
+            <td>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td>A Tale of Two Cities</td>
+            <td>Charles Dickens</td>
+            <td>2023-11-22</td>
+            <td>Ava Thompson</td>
+            <td>
+              <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+              <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+            </td>
+          </tr>
+        </tbody>        
+      </table>
+    </div>
+  </div>
+    <!-- Modal Edit Books Returned -->
+  <div class="modal fade" id="editBookReturnedModal" tabindex="-1" aria-labelledby="editBookReturnedModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editBookReturnedModalLabel">Edit Returned Book</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="editBookReturnedForm">
+            <div class="mb-3">
+              <label for="editBookTitle" class="form-label">Title</label>
+              <input type="text" class="form-control" id="editBookTitle" required>
+            </div>
+            <div class="mb-3">
+              <label for="editBookAuthor" class="form-label">Author</label>
+              <input type="text" class="form-control" id="editBookAuthor" required>
+            </div>
+            <div class="mb-3">
+              <label for="editReturnDate" class="form-label">Return Date</label>
+              <input type="date" class="form-control" id="editReturnDate" required>
+            </div>
+            <div class="mb-3">
+              <label for="editBorrowerName" class="form-label">Borrower</label>
+              <input type="text" class="form-control" id="editBorrowerName" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/booksReturned.js"></script>
+</body>
+</html>
