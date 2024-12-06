@@ -12,63 +12,64 @@ h1, h2 {
     margin: 0;
     color: #333;
 }
-.navbar {
+/* Navbar Custom Styles */
+.custom-navbar {
+    background-color: #343a40; /* Charcoal dark background for the navbar */
+    padding: 0px;
     position: fixed;
     top: 0;
-    width: 100%;
-    z-index: 10;
-    background-color: #ffffff;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure it spans across the entire page */
+    z-index: 1000; /* Make sure the navbar stays on top of other content */
 }
 
-.navbar .search-bar {
-    display: flex;
-    align-items: center;
-    width: 400px;
-    /* Đặt độ rộng cho thanh tìm kiếm */
-    margin: 0 auto;
-    /* Căn giữa thanh tìm kiếm */
+.custom-navbar .navbar-brand img {
+    height: 40px; /* Adjust the size of the logo */
 }
 
-.navbar .search-bar input {
-    flex: 1;
-    border-radius: 25px;
-    padding: 10px 20px;
-    border: 1px solid #ddd;
+.custom-navbar .navbar-nav .nav-link {
+    color: #f8f9fa !important; /* Light gray for the text to stand out */
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.navbar .search-bar .btn-search {
+.custom-navbar .navbar-nav .nav-link:hover,
+.custom-navbar .navbar-nav .nav-link.active {
+    color: #5bc0de !important; /* Light blue for hover and active states */
+    background-color: rgba(91, 192, 222, 0.1); /* Light background on hover */
+}
+
+.search-bar input {
+    width: 200px;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 6px 15px;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.custom-navbar .btn-primary {
+    background-color: #007bff; /* Blue button background */
+}
+
+.custom-navbar .btn-outline-primary {
+    color: white;
+}
+
+.custom-navbar .btn-outline-primary:hover {
     background-color: #007bff;
     color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 10px;
-    cursor: pointer;
 }
 
-.navbar .search-bar .btn-search i {
-    font-size: 18px;
+.vh-100 {
+    height: 100vh;
 }
-
-.navbar .search-bar .btn-search:hover {
-    background-color: #0056b3;
-}
-
-.tab-section {
-    display: flex;
-    justify-content: center;
-    margin: 30px 0;
-}
-
-.tab-section .nav {
-    gap: 15px;
-}
-
 
 /* Container for the Page Content */
 .container {
@@ -187,9 +188,32 @@ form button:focus {
     border-radius: 12px;
 }
 
-footer ul li a:hover,
-footer div a:hover {
-  color: #ffa500;
+footer {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling caused by the footer */    
+    box-sizing: border-box;
+    position: relative;
+    height: auto; /* Automatically adjust height */
+}
+
+
+footer a {
+    color: #5bc0de;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #007bff;
+}
+
+footer .newsletter-button {
+    background-color: #007bff;
+    color: white;
+}
+
+footer .newsletter-button:hover {
+    background-color: #0056b3;
 }
 
 .newsletter-form input:focus,
@@ -233,46 +257,27 @@ footer div a:hover {
     transform: scale(1.05); /* Slightly enlarges the button */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
 }
-
-/* Responsive Design */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .search-bar input {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .search-bar button {
-        width: 100%;
-        padding: 12px 0;
-    }
-
-    .company-info, form {
-        width: 100%;
-        max-width: 500px;
-    }
-
     footer {
-        padding: 25px 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        gap: 15px;
+        display: flex;
+        flex-direction: column; /* Stacks footer content vertically */
+        align-items: center; /* Centers content */
     }
 
-    .company-info iframe {
-        height: 220px;
+    footer .footer-section {
+        width: 100%; /* Ensures sections take up full width */
+        text-align: center; /* Center-aligns content for mobile */
+        margin-bottom: 20px; /* Adds space between sections */
+    }
+
+    footer .newsletter-form {
+        flex-direction: column; /* Stacks input and button */
+        align-items: center;
+    }
+
+    footer .newsletter-input,
+    footer .newsletter-button {
+        width: 100%; /* Full width for both */
+        margin-bottom: 10px; /* Adds spacing */
     }
 }
