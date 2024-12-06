@@ -1,106 +1,91 @@
-@charset "UTF-8";
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: Arial, sans-serif;
-}
-
+/* General Styling */
 body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	background: #eafaf1; /* Màu nền trắng nhẹ với chút xanh lá */
-	color: #0b6623;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f8f9fa;
+    overflow-x: hidden;
 }
 
-.login-container {
-	width: 350px;
-	padding: 30px;
-	background: #ffffff;
-	/* Màu trắng để tạo tương phản cho khung đăng nhập */
-	border-radius: 10px;
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-	text-align: center;
-	color: #0b6623; /* Màu chữ xanh lá cây đậm */
+/* Background Image and Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/4/4b/Long_Room_Interior%2C_Trinity_College_Dublin%2C_Ireland_-_Diliff.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.login-container h2 {
-	margin-bottom: 20px;
-	font-size: 24px;
-	color: #0b6623; /* Màu chữ xanh lá */
+.overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dim overlay */
+    z-index: -1;
 }
 
-.input-field {
-	position: relative;
-	margin-bottom: 20px;
+/* Header Styling */
+.header h1 {
+    font-size: 2rem;
 }
 
-.input-field input {
-	width: 100%;
-	padding: 12px 40px;
-	border: 1px solid #0b6623; /* Viền xanh lá cây */
-	border-radius: 5px;
-	outline: none;
-	background: #f2fdf4; /* Màu nền xanh lá nhạt cho các ô input */
-	color: #0b6623; /* Màu chữ xanh lá */
+.header p {
+    font-size: 1.2rem;
 }
 
-/* Đổi màu placeholder thành xanh lá nhạt */
-::placeholder {
-	color: #a3d7a7; /* Màu placeholder xanh lá nhạt */
-	opacity: 1;
+/* Form Card Styling */
+.form-card {
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-.input-field i {
-	position: absolute;
-	top: 50%;
-	left: 10px;
-	transform: translateY(-50%);
-	color: #0b6623; /* Màu icon xanh lá cây đậm */
+.hidden {
+    display: none;
 }
 
-.options {
-	display: flex;
-	justify-content: space-between;
-	font-size: 14px;
-	margin-bottom: 20px;
+/* Form Field Styling */
+.form-label {
+    font-weight: 600;
+    color: #6d5e46;
 }
 
-.options a {
-	color: #0b6623; /* Màu liên kết xanh lá */
-	text-decoration: none;
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #d9d4c5;
+    background-color: #fbf8f4;
 }
 
-.options a:hover {
-	text-decoration: underline;
+.form-control:focus {
+    border-color: #8e7037;
+    box-shadow: 0px 0px 5px rgba(142, 112, 55, 0.5);
 }
 
-.login-button {
-	width: 100%;
-	padding: 12px;
-	background: #28a745; /* Màu xanh lá cây cho nút */
-	border: none;
-	border-radius: 5px;
-	color: #ffffff; /* Màu chữ trắng */
-	font-size: 16px;
-	cursor: pointer;
-	transition: background 0.3s ease;
+/* Buttons */
+.btn {
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
 }
 
-.login-button:hover {
-	background: #218838; /* Màu xanh lá cây đậm hơn khi hover */
+/* Links */
+.link-primary {
+    color: #8e7037;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-.register-link {
-	font-size: 14px;
-	margin-top: 15px;
-	color: #0b6623;
-}
-
-.register-link a {
-	color: #0b6623; /* Màu liên kết xanh lá */
-	text-decoration: underline;
+.link-primary:hover {
+    color: #7b5c2e;
 }

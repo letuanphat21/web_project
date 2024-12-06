@@ -9,23 +9,17 @@
     display: none;
 }
 
-/* Ensure body still allows scrolling */
-body {
-    overflow: hidden; /* Temporarily disable scrolling */
-    overflow-y: auto; /* Re-enable scrolling but hide scrollbar */
-}
 /* General Styling */
 body {
     font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f4f6f9;
-    line-height: 1.6;
     padding-top: 70px;
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     overflow: auto; /* Ensure content can still scroll */
     scrollbar-width: none; /* Hide scrollbar in Firefox */
     -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+    overflow: hidden; /* Temporarily disable scrolling */
+    overflow-y: auto; /* Re-enable scrolling but hide scrollbar */
 }
 
 body::-webkit-scrollbar {
@@ -37,61 +31,63 @@ h1, h2 {
     color: #333;
 }
 
-.navbar {
+/* Navbar Custom Styles */
+.custom-navbar {
+    background-color: #343a40; /* Charcoal dark background for the navbar */
+    padding: 0px;
     position: fixed;
     top: 0;
-    width: 100%;
-    z-index: 10;
-    background-color: #ffffff;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure it spans across the entire page */
+    z-index: 1000; /* Make sure the navbar stays on top of other content */
 }
 
-.navbar .search-bar {
-    display: flex;
-    align-items: center;
-    width: 400px;
-    /* Đặt độ rộng cho thanh tìm kiếm */
-    margin: 0 auto;
-    /* Căn giữa thanh tìm kiếm */
+.custom-navbar .navbar-brand img {
+    height: 40px; /* Adjust the size of the logo */
 }
 
-.navbar .search-bar input {
-    flex: 1;
-    border-radius: 25px;
-    padding: 10px 20px;
-    border: 1px solid #ddd;
+.custom-navbar .navbar-nav .nav-link {
+    color: #f8f9fa !important; /* Light gray for the text to stand out */
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.navbar .search-bar .btn-search {
+.custom-navbar .navbar-nav .nav-link:hover,
+.custom-navbar .navbar-nav .nav-link.active {
+    color: #5bc0de !important; /* Light blue for hover and active states */
+    background-color: rgba(91, 192, 222, 0.1); /* Light background on hover */
+}
+
+.search-bar input {
+    width: 200px;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 6px 15px;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.custom-navbar .btn-primary {
+    background-color: #007bff; /* Blue button background */
+}
+
+.custom-navbar .btn-outline-primary {
+    color: white;
+}
+
+.custom-navbar .btn-outline-primary:hover {
     background-color: #007bff;
     color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 10px;
-    cursor: pointer;
 }
 
-.navbar .search-bar .btn-search i {
-    font-size: 18px;
-}
-
-.navbar .search-bar .btn-search:hover {
-    background-color: #0056b3;
-}
-
-.tab-section {
-    display: flex;
-    justify-content: center;
-    margin: 30px 0;
-}
-
-.tab-section .nav {
-    gap: 15px;
+.vh-100 {
+    height: 100vh;
 }
 
 .carousel-item img {
@@ -147,15 +143,6 @@ h1, h2 {
     }
 }
 
-.tab-section {
-    display: flex;
-    justify-content: center;
-    margin: 30px 0;
-}
-
-.tab-section .nav {
-    gap: 15px;
-}
 /* Styling for Section Headers */
 .section-header {
     text-align: center;
@@ -223,94 +210,8 @@ h1, h2 {
     max-width: 1200px;
 }
 
-/* Basic styling for the nav items */
-.nav-item {
-    position: relative; /* Ensures dropdown appears correctly */
-}
-
-/* Styling the dropdown menu container */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%; /* Position directly below the parent */
-    left: 0;
-    background-color: #ffffff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    min-width: 180px;
-    z-index: 1000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
-    transform: translateY(10px);
-}
-
-/* Show the dropdown on hover */
-.nav-item:hover .dropdown-menu {
-    display: block;
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0); /* Slide in effect */
-    visibility: visible;
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s;
-}
-
-/* Styling the dropdown items */
-.dropdown-item {
-    padding: 10px 15px;
-    color: #333;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Hover effect for the dropdown items */
-.dropdown-item:hover {
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-}
-
-/* Add active class style for the selected dropdown item */
-.dropdown-item.active {
-    background-color: #007bff;
-    color: white;
-}
-
-/* Add spacing between items */
-.dropdown-item + .dropdown-item {
-    border-top: 1px solid #eee;
-}
-
-/* Optional: Change dropdown toggle's background color on hover */
-.nav-link.dropdown-toggle:hover {
-    background-color: rgb(41, 96, 151);
-    color: white
-}
-
-/* Mobile optimization: Full-width dropdown on smaller screens */
-@media (max-width: 768px) {
-    .dropdown-menu {
-        min-width: 100%; /* Make dropdown full width on mobile */
-    }
-}
-
-/* Keyboard navigation */
-.nav-item.dropdown:focus-within .dropdown-menu {
-    display: block;
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0); 
-    visibility: visible;
-}
-
-/* Add a focus outline for accessibility */
-.nav-link.dropdown-toggle:focus {
-    outline: 3px solid #007bff;
-}
-
 .hero-section {
     position: relative;
-    background: url('image/library.png') no-repeat center center/cover;
     padding: 100px 0;
 }
 
@@ -595,22 +496,6 @@ h1, h2 {
         flex-direction: column;
         align-items: center;
     }
-
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .search-bar input {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .search-bar button {
-        width: 100%;
-        padding: 12px 0;
-    }
-
     .genres-row {
         flex-direction: column;
     }
@@ -637,6 +522,34 @@ h1, h2 {
 .btn-primary:hover {
     background-color: #0056b3;
     border-color: #0056b3;
+}
+
+footer {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling caused by the footer */    
+    box-sizing: border-box;
+    position: relative;
+    height: auto; /* Automatically adjust height */
+}
+
+
+footer a {
+    color: #5bc0de;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #007bff;
+}
+
+footer .newsletter-button {
+    background-color: #007bff;
+    color: white;
+}
+
+footer .newsletter-button:hover {
+    background-color: #0056b3;
 }
 
 .newsletter-form input:focus,
@@ -680,38 +593,28 @@ h1, h2 {
     transform: scale(1.05); /* Slightly enlarges the button */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
 }
-
-/* Responsive Design */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .search-bar input {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .search-bar button {
-        width: 100%;
-        padding: 12px 0;
-    }
-
     footer {
-        padding: 25px 15px;
+        display: flex;
+        flex-direction: column; /* Stacks footer content vertically */
+        align-items: center; /* Centers content */
     }
-}
 
-@media (max-width: 480px) {
-    .container {
-        gap: 15px;
+    footer .footer-section {
+        width: 100%; /* Ensures sections take up full width */
+        text-align: center; /* Center-aligns content for mobile */
+        margin-bottom: 20px; /* Adds space between sections */
+    }
+
+    footer .newsletter-form {
+        flex-direction: column; /* Stacks input and button */
+        align-items: center;
+    }
+
+    footer .newsletter-input,
+    footer .newsletter-button {
+        width: 100%; /* Full width for both */
+        margin-bottom: 10px; /* Adds spacing */
     }
 }
 .modal {
