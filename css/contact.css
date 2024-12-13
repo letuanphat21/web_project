@@ -30,6 +30,7 @@ h1, h2 {
     color: #f8f9fa !important; /* Light gray for the text to stand out */
     padding-left: 15px;
     padding-right: 15px;
+
 }
 
 .custom-navbar .navbar-nav .nav-link:hover,
@@ -37,6 +38,7 @@ h1, h2 {
     color: #5bc0de !important; /* Light blue for hover and active states */
     background-color: rgba(91, 192, 222, 0.1); /* Light background on hover */
 }
+
 
 .search-bar input {
     width: 200px;
@@ -257,27 +259,81 @@ footer .newsletter-button:hover {
     transform: scale(1.05); /* Slightly enlarges the button */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
 }
+
+/* Responsive Styles */
 @media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .custom-navbar {
+        padding: 10px;
+    }
+
+    .custom-navbar .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .custom-navbar .navbar-nav .nav-link {
+        padding: 10px 0;
+    }
+
+    .search-bar {
+        flex-direction: column; /* Stack input and button */
+        width: 90%; /* Make it span most of the screen width */
+        margin: 10 auto; /* Center the search bar */
+    }
+
+    .search-bar input {
+        max-width: 100%; /* Ensure full width */
+        width: 100%;
+        border-radius: 5px; /* Fully rounded corners */
+        margin-bottom: 5px; /* Add spacing below input */
+    }
+
+    .search-bar button {
+        width: 100%; /* Full width button */
+        border-radius: 5px; /* Fully rounded corners */
+        margin-bottom: 10px;
+    }
+
+    .category-section img {
+        height: auto;
+    }
+
+    .books-section,
+    .category-section {
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
+    .card {
+        margin-bottom: 15px;
+    }
+
     footer {
         display: flex;
-        flex-direction: column; /* Stacks footer content vertically */
-        align-items: center; /* Centers content */
+        flex-direction: column;
+        align-items: center;
     }
 
     footer .footer-section {
-        width: 100%; /* Ensures sections take up full width */
-        text-align: center; /* Center-aligns content for mobile */
-        margin-bottom: 20px; /* Adds space between sections */
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
     }
 
     footer .newsletter-form {
-        flex-direction: column; /* Stacks input and button */
+        flex-direction: column;
         align-items: center;
     }
 
     footer .newsletter-input,
     footer .newsletter-button {
-        width: 100%; /* Full width for both */
-        margin-bottom: 10px; /* Adds spacing */
+        width: 100%;
+        margin-bottom: 10px;
+
     }
 }

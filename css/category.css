@@ -49,6 +49,7 @@ h1, h2 {
     color: #f8f9fa !important; /* Light gray for the text to stand out */
     padding-left: 15px;
     padding-right: 15px;
+
 }
 
 .custom-navbar .navbar-nav .nav-link:hover,
@@ -56,6 +57,7 @@ h1, h2 {
     color: #5bc0de !important; /* Light blue for hover and active states */
     background-color: rgba(91, 192, 222, 0.1); /* Light background on hover */
 }
+
 
 .search-bar input {
     width: 200px;
@@ -117,9 +119,47 @@ h1, h2 {
 .description strong {
     font-weight: bold;
 }
-
-/* You can also customize padding or font sizes for mobile responsiveness */
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
+    .carousel-item {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+    }
+    .card {
+        width: 330px;
+    }
+    .card-title {
+        white-space: nowrap; /* Prevent text from wrapping */
+        overflow: hidden; /* Hide any overflow */
+        text-overflow: ellipsis; /* Add "..." for truncated text */ 
+    }
+    .card-img-top {
+        height: 200px; /* Reduce height for smaller screens */
+    }
+    .card-text{
+        white-space: nowrap; /* Prevent text from wrapping */
+        overflow: hidden; /* Hide any overflow */
+        text-overflow: ellipsis; /* Add "..." for truncated text */ 
+    }
+    .section-header {
+        margin: 0px 20px !important;
+        padding: 30px 0 !important;
+    }
+    .section-header h1::before,
+    .section-header h1::after,
+    .section-header h2::before,
+    .section-header h2::after {
+        display: none;
+    }
+
+
+    .section-header h1 {
+        font-size: 1.6rem !important; /* Force font size on mobile */
+    }
     .description h5 {
         font-size: 1.5rem;
     }
@@ -129,33 +169,18 @@ h1, h2 {
     }
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    .carousel-item {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-        height: auto;
-    }
-
-    .carousel-item img {
-        margin-bottom: 20px; /* Add margin between image and text */
-        width: 80%; /* Image will take up 80% of the width */
-        height: 300px; /* Smaller height for mobile */
-    }
-}
 
 /* Styling for Section Headers */
 .section-header {
     text-align: center;
-    margin: 40px 0;
-    padding: 20px 0;
+    margin: 30px 0;
+    padding: 15px 0;
 }
 
 .section-header h1,
 .section-header h2 {
-    font-size: 2rem;
     color: #333;
     font-weight: bold;
-    margin: 0;
     position: relative;
 }
 
@@ -191,12 +216,6 @@ h1, h2 {
 .section-header h2::after {
     right: 0;
     margin-top: -1px;  /* Adjusts line to be in the middle of the header text */
-}
-
-/* Optional: Style the smaller header for consistency */
-.section-header p {
-    color: #888;
-    font-size: 1rem;
 }
 
 /* Container for the Page Content */
@@ -249,11 +268,22 @@ h1, h2 {
 
 /* Optional: Adjust text and button size on smaller screens */
 @media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 2.5rem;
+    .hero-section {
+        padding: 50px 20px;
     }
+
+    .hero-section h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
     .hero-section p {
-        font-size: 1.125rem;
+        font-size: 1rem;
+    }
+
+    .hero-section .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
     }
 }
 
@@ -347,6 +377,8 @@ h1, h2 {
 
 .card-img-top {
     height: 300px;
+    object-fit: cover; /* Ensures the image maintains its aspect ratio without distortion */
+    width: 100%; /* Ensures the image spans the full width of the card */
 }
 
 .card-body {
@@ -410,7 +442,6 @@ h1, h2 {
 #bookModal .badge-free {
     background-color: #28a745; /* Green for "New" */
 }
-
 
 .genres-row {
     display: flex;
@@ -478,7 +509,6 @@ h1, h2 {
     transform: translateY(-10px);
     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
 }
-
 /* Buttons */
 .btn-primary {
     background-color: #007bff;
@@ -496,13 +526,24 @@ h1, h2 {
         flex-direction: column;
         align-items: center;
     }
-    .genres-row {
-        flex-direction: column;
-    }
 
     .genre-card {
-        flex: 1 1 100%; /* One card per row */
-        max-width: 100%;
+        flex: 1 1 calc(50% - 1rem); /* Two cards per row */
+        max-width: 48%; /* Max width for mobile layout */
+        margin-bottom: 1rem; /* Add spacing between rows */
+    }
+
+    .genre-icon {
+        font-size: 2.5rem; /* Slightly smaller icons on mobile */
+    }
+
+    .genre-title {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+
+    .genre-link {
+        padding: 1.5rem 1rem; /* Reduce padding for compact layout */
+
     }
 }
 
@@ -593,28 +634,82 @@ footer .newsletter-button:hover {
     transform: scale(1.05); /* Slightly enlarges the button */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
 }
+
+/* Responsive Styles */
 @media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .custom-navbar {
+        padding: 10px;
+    }
+
+    .custom-navbar .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .custom-navbar .navbar-nav .nav-link {
+        padding: 10px 0;
+    }
+
+    .search-bar {
+        flex-direction: column; /* Stack input and button */
+        width: 90%; /* Make it span most of the screen width */
+        margin: 10 auto; /* Center the search bar */
+    }
+
+    .search-bar input {
+        max-width: 100%; /* Ensure full width */
+        width: 100%;
+        border-radius: 5px; /* Fully rounded corners */
+        margin-bottom: 5px; /* Add spacing below input */
+    }
+
+    .search-bar button {
+        width: 100%; /* Full width button */
+        border-radius: 5px; /* Fully rounded corners */
+        margin-bottom: 10px;
+    }
+
+    .category-section img {
+        height: auto;
+    }
+
+    .books-section,
+    .category-section {
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
+    .card {
+        margin-bottom: 15px;
+    }
+
     footer {
         display: flex;
-        flex-direction: column; /* Stacks footer content vertically */
-        align-items: center; /* Centers content */
+        flex-direction: column;
+        align-items: center;
     }
 
     footer .footer-section {
-        width: 100%; /* Ensures sections take up full width */
-        text-align: center; /* Center-aligns content for mobile */
-        margin-bottom: 20px; /* Adds space between sections */
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
     }
 
     footer .newsletter-form {
-        flex-direction: column; /* Stacks input and button */
+        flex-direction: column;
         align-items: center;
     }
 
     footer .newsletter-input,
     footer .newsletter-button {
-        width: 100%; /* Full width for both */
-        margin-bottom: 10px; /* Adds spacing */
+        width: 100%;
+        margin-bottom: 10px;
+
     }
 }
 .modal {
@@ -711,6 +806,64 @@ footer .newsletter-button:hover {
     text-align: center;
 }
 
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .modal-content {
+        flex-direction: column; /* Stack modal content vertically */
+        width: 95%; /* Use almost the full screen width */
+    }
+
+    .modal-body {
+        flex-direction: column; /* Stack image and details vertically */
+        gap: 10px; /* Reduce gap for a cleaner look */
+    }
+
+    .modal-image {
+        width: 100%; /* Ensure the image section spans full width */
+    }
+
+    .modal-image-img {
+        max-height: 250px; /* Restrict height for mobile */
+        object-fit: cover;
+    }
+
+    .modal-details {
+        padding: 10px; /* Reduce padding for mobile */
+    }
+
+    .modal-title {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+
+    .modal-author {
+        font-size: 16px;
+    }
+
+    .modal-description {
+        font-size: 14px;
+    }
+
+    .modal-actions {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Add spacing between buttons */
+        align-items: center; /* Center items */
+    }
+
+    .modal-actions .btn {
+        width: 100%; /* Buttons span full width on mobile */
+        font-size: 14px; /* Adjust font size for buttons */
+    }
+    #modalBadge {
+        order: -1; /* Move badge to the top */
+        margin-bottom: 5px; /* Add space below the badge */
+        text-align: center; /* Center the badge content */
+    }
+
+    #cancelButton {
+        width: 100%; /* Make the button span full width */
+        padding: 12px; /* Adjust padding for better touch support */
+    }
+}
 .btn-secondary {
     background-color: #f44336;
     color: white;

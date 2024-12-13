@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Manager</title>
+    <title>Feedback Page</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -12,10 +11,9 @@
     <!-- AOS CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/about.css">
-    
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/feedback.css">
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
         <div class="container-fluid">
@@ -23,9 +21,7 @@
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR35FLvdopkSZYZeJwoz3rPfYLfr0lnjGcRhQ&s" 
                      alt="Library Logo" 
                      style="height: 50px; width: auto; border-radius: 50%;">
-
                 <p style="color: white; font-size: 40px; margin: 0; margin-left: 10px;">Library</p>
-
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
@@ -37,7 +33,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="category.html" id="categoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Category</a>
                         <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
@@ -53,7 +49,7 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="policy.html">Policy</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
                 </ul>
                 <div class="search-bar ms-3 d-flex">
                     <input type="text" class="form-control" placeholder="Search book, author...">
@@ -66,131 +62,61 @@
             </div>
         </div>
     </nav> 
-
-    <section class="team-section">
-        <h2>Our Team</h2>
-        <div class="team-container">
-            <!-- Team Member Card -->
-            <div class="team-card">
-                <img src="image/letuanphat.png" alt="Lê Tuấn Phát">
-                <h3>Lê Tuấn Phát</h3>
-                <p class="role">Leader</p>
-                <p>Student ID: 21129858</p>
-                <p>Class: DH23DTC</p>
-                <p>Hobbies: Play badminton, watching movies...</p>
-                <div class="social-icons">
-                    <!-- Email Icon -->
-                    <a href="mailto:example@example.com" target="_blank">
-                        <img src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454731_640.png" alt="Email">
-                    </a>
-                    <!-- Facebook Icon -->
-                    <a href="https://www.facebook.com/your-profile" target="_blank">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz2tO_16ZMY_2nVS6uiucsXXm4NQ3KT_8BetK4Z946Ac7HuH6o0xH-dJhxX0Wnr6thsRo&usqp=CAU" alt="Facebook">
-                    </a>
-                    <!-- GitHub Icon -->
-                    <a href="https://letuanphat21.github.io/HCI2025_21129858/" target="_blank">
-                        <img src="https://img.icons8.com/win10/200/228BE6/github.png" alt="GitHub">
-                    </a>
-                                        
-                </div>
-            </div>
-            <!-- Repeat the structure for other members -->
-            <div class="team-card">
-                <img src="image/manguyenvu.png" alt="Ma Nguyên Vũ">
-                <h3>Ma Nguyên Vũ</h3>
-                <p class="role">Member</p>
-                <p>Student ID: 23130388</p>
-                <p>Class: DH23DTA</p>
-                <p>Hobbies: Play volleyball, League of Legends...</p>
-                <div class="social-icons">
-                    <!-- Email Icon -->
-                    <a href="mailto:example@example.com" target="_blank">
-                        <img src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454731_640.png" alt="Email">
-                    </a>
-                    <!-- Facebook Icon -->
-                    <a href="https://www.facebook.com/your-profile" target="_blank">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz2tO_16ZMY_2nVS6uiucsXXm4NQ3KT_8BetK4Z946Ac7HuH6o0xH-dJhxX0Wnr6thsRo&usqp=CAU" alt="Facebook">
-                    </a>
-                    <!-- GitHub Icon -->
-                    <a href="https://itorority.github.io/hci_23130388_MaNguyenVu/" target="_blank">
-                        <img src="https://img.icons8.com/win10/200/228BE6/github.png" alt="GitHub">
-                    </a>
-                                        
-                </div>
-            </div>
-            <div class="team-card">
-                <img src="image/huuthuc.png" alt="Huỳnh Hữu Thức">
-                <h3>Huỳnh Hữu Thức</h3>
-                <p class="role">Member</p>
-                <p>Student ID: 23130323</p>
-                <p>Class: DH23DTC</p>
-                <p>Hobbies: Play soccer, League of Legends...</p>
-                <div class="social-icons">
-                    <!-- Email Icon -->
-                    <a href="mailto:example@example.com" target="_blank">
-                        <img src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454731_640.png" alt="Email">
-                    </a>
-                    <!-- Facebook Icon -->
-                    <a href="https://www.facebook.com/your-profile" target="_blank">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz2tO_16ZMY_2nVS6uiucsXXm4NQ3KT_8BetK4Z946Ac7HuH6o0xH-dJhxX0Wnr6thsRo&usqp=CAU" alt="Facebook">
-                    </a>
-                    <!-- GitHub Icon -->
-                    <a href="https://joyllyhuynh.github.io/23130323_HuynhHuuThuc/" target="_blank">
-                        <img src="https://img.icons8.com/win10/200/228BE6/github.png" alt="GitHub">
-                    </a>
-                                        
-                </div>
-            </div>
-            <div class="team-card">
-                <img src="image/ngoctan.png" alt="Trần Ngọc Tân">
-                <h3>Trần Ngọc Tân</h3>
-                <p class="role">Member</p>
-                <p>Student ID: 22130247</p>
-                <p>Class: DH23DTC</p>
-                <p>Hobbies: Play soccer, watching movies...</p>
-                <div class="social-icons">
-                    <!-- Email Icon -->
-                    <a href="mailto:example@example.com" target="_blank">
-                        <img src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454731_640.png" alt="Email">
-                    </a>
-                    <!-- Facebook Icon -->
-                    <a href="https://www.facebook.com/your-profile" target="_blank">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz2tO_16ZMY_2nVS6uiucsXXm4NQ3KT_8BetK4Z946Ac7HuH6o0xH-dJhxX0Wnr6thsRo&usqp=CAU" alt="Facebook">
-                    </a>
-                    <!-- GitHub Icon -->
-                    <a href="https://tantran2004.github.io/gtnmlab/" target="_blank">
-                        <img src="https://img.icons8.com/win10/200/228BE6/github.png" alt="GitHub">
-                    </a>
-                                        
-                </div>
-            </div>
-            <div class="team-card">
-                <img src="image/phinguyen.png" alt="Nguyễn Phi">
-                <h3>Nguyễn Phi</h3>
-                <p class="role">Member</p>
-                <p>Student ID: 22130209</p>
-                <p>Class: DH23DTC</p>
-                <p>Hobbies: Play soccer, watching movies...</p>
-                <div class="social-icons">
-                    <!-- Email Icon -->
-                    <a href="mailto:example@example.com" target="_blank">
-                        <img src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454731_640.png" alt="Email">
-                    </a>
-                    <!-- Facebook Icon -->
-                    <a href="https://www.facebook.com/your-profile" target="_blank">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz2tO_16ZMY_2nVS6uiucsXXm4NQ3KT_8BetK4Z946Ac7HuH6o0xH-dJhxX0Wnr6thsRo&usqp=CAU" alt="Facebook">
-                    </a>
-                    <!-- GitHub Icon -->
-                    <a href="https://nguyenphi0604.github.io/HCI2025/" target="_blank">
-                        <img src="https://img.icons8.com/win10/200/228BE6/github.png" alt="GitHub">
-                    </a>
-                                        
-                </div>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="text-center">We value your feedback</h1>
+                <p class="text-center text-muted mb-4">Your feedback helps us improve. Please share your thoughts below.</p>
+                <form action="#" method="POST">
+                    <!-- Name Field -->
+                    <div class="form-group">
+                        <label for="name">Name (Optional):</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" autofocus>
+                    </div>
+                    <!-- Email Field -->
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Your Email">
+                    </div>
+                    <!-- Feedback Type -->
+                    <div class="form-group">
+                        <label for="type">Feedback Type:</label>
+                        <select id="type" name="type" class="form-control">
+                            <option value="general" selected>General Feedback</option>
+                            <option value="issue">Report an Issue</option>
+                            <option value="suggestion">Suggestion</option>
+                            <option value="compliment">Compliment</option>
+                        </select>
+                    </div>
+                    <!-- Rating -->
+                    <div class="form-group">
+                        <label>How would you rate your experience?</label>
+                        <div class="rating-group d-flex flex-row-reverse justify-content-end">
+                            <input type="radio" id="star5" name="rating" value="5">
+                            <label for="star5">★</label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4">★</label>
+                            <input type="radio" id="star3" name="rating" value="3" checked> <!-- Default rating -->
+                            <label for="star3">★</label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2">★</label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1">★</label>
+                        </div>
+                    </div>
+                    <!-- Feedback Message -->
+                    <div class="form-group">
+                        <label for="message">Your Feedback:</label>
+                        <textarea id="message" name="message" class="form-control" rows="5" placeholder="Share your thoughts..."></textarea>
+                    </div>
+                    <!-- Submit Button -->
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                    </div>
+                </form>                
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
+    </div>
     <footer style="background-color: #343a40; color: #fff; padding: 20px; margin-top: 30px; font-size: 16px;">
         <div 
             style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 20px;" data-aos="fade-in"
@@ -277,7 +203,6 @@
             © 2024 Group2. All rights reserved.
         </div>
     </footer>  
-
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -290,5 +215,4 @@
         AOS.init();  // Initialize AOS animations
     </script>
 </body>
-
 </html>
