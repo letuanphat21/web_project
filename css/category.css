@@ -49,6 +49,7 @@ h1, h2 {
     color: #f8f9fa !important; /* Light gray for the text to stand out */
     padding-left: 15px;
     padding-right: 15px;
+
 }
 
 .custom-navbar .navbar-nav .nav-link:hover,
@@ -56,6 +57,7 @@ h1, h2 {
     color: #5bc0de !important; /* Light blue for hover and active states */
     background-color: rgba(91, 192, 222, 0.1); /* Light background on hover */
 }
+
 
 .search-bar input {
     width: 200px;
@@ -154,6 +156,7 @@ h1, h2 {
         display: none;
     }
 
+
     .section-header h1 {
         font-size: 1.6rem !important; /* Force font size on mobile */
     }
@@ -165,6 +168,7 @@ h1, h2 {
         font-size: 1rem;
     }
 }
+
 
 /* Styling for Section Headers */
 .section-header {
@@ -522,6 +526,7 @@ h1, h2 {
         flex-direction: column;
         align-items: center;
     }
+
     .genre-card {
         flex: 1 1 calc(50% - 1rem); /* Two cards per row */
         max-width: 48%; /* Max width for mobile layout */
@@ -538,6 +543,7 @@ h1, h2 {
 
     .genre-link {
         padding: 1.5rem 1rem; /* Reduce padding for compact layout */
+
     }
 }
 
@@ -628,6 +634,7 @@ footer .newsletter-button:hover {
     transform: scale(1.05); /* Slightly enlarges the button */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
 }
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     body {
@@ -702,6 +709,7 @@ footer .newsletter-button:hover {
     footer .newsletter-button {
         width: 100%;
         margin-bottom: 10px;
+
     }
 }
 .modal {
