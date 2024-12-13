@@ -306,5 +306,10 @@ h1, h2, h3 {
 .scroll-to-top:hover {
     background-color: #0056b3;
 }
-
+.modal {
+    z-index: 1100 !important;
+}
+.modal-backdrop {
+    z-index: 1000 !important;
+}
 
