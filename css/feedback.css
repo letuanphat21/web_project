@@ -1,0 +1,24 @@
+.rating-group {
+    display: flex;
+    flex-direction: row-reverse; /* Reverses the order visually */
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.rating-group input[type="radio"] {
+    display: none; /* Hide the radio inputs */
+}
+
+.rating-group label {
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Highlight stars on hover and when checked */
+.rating-group label:hover,
+.rating-group label:hover ~ label,
+.rating-group input[type="radio"]:checked ~ label {
+    color: #ffcc00;
+}

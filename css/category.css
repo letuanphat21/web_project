@@ -9,23 +9,17 @@
     display: none;
 }
 
-/* Ensure body still allows scrolling */
-body {
-    overflow: hidden; /* Temporarily disable scrolling */
-    overflow-y: auto; /* Re-enable scrolling but hide scrollbar */
-}
 /* General Styling */
 body {
     font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f4f6f9;
-    line-height: 1.6;
     padding-top: 70px;
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     overflow: auto; /* Ensure content can still scroll */
     scrollbar-width: none; /* Hide scrollbar in Firefox */
     -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+    overflow: hidden; /* Temporarily disable scrolling */
+    overflow-y: auto; /* Re-enable scrolling but hide scrollbar */
 }
 
 body::-webkit-scrollbar {
@@ -37,51 +31,63 @@ h1, h2 {
     color: #333;
 }
 
-.navbar {
+/* Navbar Custom Styles */
+.custom-navbar {
+    background-color: #343a40; /* Charcoal dark background for the navbar */
+    padding: 0px;
     position: fixed;
     top: 0;
-    width: 100%;
-    z-index: 10;
-    background-color: #ffffff;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure it spans across the entire page */
+    z-index: 1000; /* Make sure the navbar stays on top of other content */
 }
 
-.navbar .search-bar {
-    display: flex;
-    align-items: center;
-    width: 400px;
-    /* Đặt độ rộng cho thanh tìm kiếm */
-    margin: 0 auto;
-    /* Căn giữa thanh tìm kiếm */
+.custom-navbar .navbar-brand img {
+    height: 40px; /* Adjust the size of the logo */
 }
 
-.navbar .search-bar input {
-    flex: 1;
-    border-radius: 25px;
-    padding: 10px 20px;
-    border: 1px solid #ddd;
+.custom-navbar .navbar-nav .nav-link {
+    color: #f8f9fa !important; /* Light gray for the text to stand out */
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.navbar .search-bar .btn-search {
+.custom-navbar .navbar-nav .nav-link:hover,
+.custom-navbar .navbar-nav .nav-link.active {
+    color: #5bc0de !important; /* Light blue for hover and active states */
+    background-color: rgba(91, 192, 222, 0.1); /* Light background on hover */
+}
+
+.search-bar input {
+    width: 200px;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 6px 15px;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.custom-navbar .btn-primary {
+    background-color: #007bff; /* Blue button background */
+}
+
+.custom-navbar .btn-outline-primary {
+    color: white;
+}
+
+.custom-navbar .btn-outline-primary:hover {
     background-color: #007bff;
     color: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 10px;
-    cursor: pointer;
 }
 
-.navbar .search-bar .btn-search i {
-    font-size: 18px;
-}
-
-.navbar .search-bar .btn-search:hover {
-    background-color: #0056b3;
+.vh-100 {
+    height: 100vh;
 }
 
 .carousel-item img {
@@ -111,9 +117,46 @@ h1, h2 {
 .description strong {
     font-weight: bold;
 }
-
-/* You can also customize padding or font sizes for mobile responsiveness */
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
+    .carousel-item {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+    }
+    .card {
+        width: 330px;
+    }
+    .card-title {
+        white-space: nowrap; /* Prevent text from wrapping */
+        overflow: hidden; /* Hide any overflow */
+        text-overflow: ellipsis; /* Add "..." for truncated text */ 
+    }
+    .card-img-top {
+        height: 200px; /* Reduce height for smaller screens */
+    }
+    .card-text{
+        white-space: nowrap; /* Prevent text from wrapping */
+        overflow: hidden; /* Hide any overflow */
+        text-overflow: ellipsis; /* Add "..." for truncated text */ 
+    }
+    .section-header {
+        margin: 0px 20px !important;
+        padding: 30px 0 !important;
+    }
+    .section-header h1::before,
+    .section-header h1::after,
+    .section-header h2::before,
+    .section-header h2::after {
+        display: none;
+    }
+
+    .section-header h1 {
+        font-size: 1.6rem !important; /* Force font size on mobile */
+    }
     .description h5 {
         font-size: 1.5rem;
     }
@@ -123,42 +166,17 @@ h1, h2 {
     }
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    .carousel-item {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-        height: auto;
-    }
-
-    .carousel-item img {
-        margin-bottom: 20px; /* Add margin between image and text */
-        width: 80%; /* Image will take up 80% of the width */
-        height: 300px; /* Smaller height for mobile */
-    }
-}
-
-.tab-section {
-    display: flex;
-    justify-content: center;
-    margin: 30px 0;
-}
-
-.tab-section .nav {
-    gap: 15px;
-}
 /* Styling for Section Headers */
 .section-header {
     text-align: center;
-    margin: 40px 0;
-    padding: 20px 0;
+    margin: 30px 0;
+    padding: 15px 0;
 }
 
 .section-header h1,
 .section-header h2 {
-    font-size: 2rem;
     color: #333;
     font-weight: bold;
-    margin: 0;
     position: relative;
 }
 
@@ -196,12 +214,6 @@ h1, h2 {
     margin-top: -1px;  /* Adjusts line to be in the middle of the header text */
 }
 
-/* Optional: Style the smaller header for consistency */
-.section-header p {
-    color: #888;
-    font-size: 1rem;
-}
-
 /* Container for the Page Content */
 .container {
     display: flex;
@@ -213,94 +225,8 @@ h1, h2 {
     max-width: 1200px;
 }
 
-/* Basic styling for the nav items */
-.nav-item {
-    position: relative; /* Ensures dropdown appears correctly */
-}
-
-/* Styling the dropdown menu container */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%; /* Position directly below the parent */
-    left: 0;
-    background-color: #ffffff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    min-width: 180px;
-    z-index: 1000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
-    transform: translateY(10px);
-}
-
-/* Show the dropdown on hover */
-.nav-item:hover .dropdown-menu {
-    display: block;
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0); /* Slide in effect */
-    visibility: visible;
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s;
-}
-
-/* Styling the dropdown items */
-.dropdown-item {
-    padding: 10px 15px;
-    color: #333;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Hover effect for the dropdown items */
-.dropdown-item:hover {
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-}
-
-/* Add active class style for the selected dropdown item */
-.dropdown-item.active {
-    background-color: #007bff;
-    color: white;
-}
-
-/* Add spacing between items */
-.dropdown-item + .dropdown-item {
-    border-top: 1px solid #eee;
-}
-
-/* Optional: Change dropdown toggle's background color on hover */
-.nav-link.dropdown-toggle:hover {
-    background-color: rgb(41, 96, 151);
-    color: white
-}
-
-/* Mobile optimization: Full-width dropdown on smaller screens */
-@media (max-width: 768px) {
-    .dropdown-menu {
-        min-width: 100%; /* Make dropdown full width on mobile */
-    }
-}
-
-/* Keyboard navigation */
-.nav-item.dropdown:focus-within .dropdown-menu {
-    display: block;
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0); 
-    visibility: visible;
-}
-
-/* Add a focus outline for accessibility */
-.nav-link.dropdown-toggle:focus {
-    outline: 3px solid #007bff;
-}
-
 .hero-section {
     position: relative;
-    background: url('image/library.png') no-repeat center center/cover;
     padding: 100px 0;
 }
 
@@ -338,11 +264,22 @@ h1, h2 {
 
 /* Optional: Adjust text and button size on smaller screens */
 @media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 2.5rem;
+    .hero-section {
+        padding: 50px 20px;
     }
+
+    .hero-section h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
     .hero-section p {
-        font-size: 1.125rem;
+        font-size: 1rem;
+    }
+
+    .hero-section .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
     }
 }
 
@@ -436,6 +373,8 @@ h1, h2 {
 
 .card-img-top {
     height: 300px;
+    object-fit: cover; /* Ensures the image maintains its aspect ratio without distortion */
+    width: 100%; /* Ensures the image spans the full width of the card */
 }
 
 .card-body {
@@ -499,7 +438,6 @@ h1, h2 {
 #bookModal .badge-free {
     background-color: #28a745; /* Green for "New" */
 }
-
 
 .genres-row {
     display: flex;
@@ -567,7 +505,6 @@ h1, h2 {
     transform: translateY(-10px);
     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
 }
-
 /* Buttons */
 .btn-primary {
     background-color: #007bff;
@@ -585,29 +522,22 @@ h1, h2 {
         flex-direction: column;
         align-items: center;
     }
-
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .search-bar input {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .search-bar button {
-        width: 100%;
-        padding: 12px 0;
-    }
-
-    .genres-row {
-        flex-direction: column;
-    }
-
     .genre-card {
-        flex: 1 1 100%; /* One card per row */
-        max-width: 100%;
+        flex: 1 1 calc(50% - 1rem); /* Two cards per row */
+        max-width: 48%; /* Max width for mobile layout */
+        margin-bottom: 1rem; /* Add spacing between rows */
+    }
+
+    .genre-icon {
+        font-size: 2.5rem; /* Slightly smaller icons on mobile */
+    }
+
+    .genre-title {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+
+    .genre-link {
+        padding: 1.5rem 1rem; /* Reduce padding for compact layout */
     }
 }
 
@@ -627,6 +557,34 @@ h1, h2 {
 .btn-primary:hover {
     background-color: #0056b3;
     border-color: #0056b3;
+}
+
+footer {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Prevents horizontal scrolling caused by the footer */    
+    box-sizing: border-box;
+    position: relative;
+    height: auto; /* Automatically adjust height */
+}
+
+
+footer a {
+    color: #5bc0de;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #007bff;
+}
+
+footer .newsletter-button {
+    background-color: #007bff;
+    color: white;
+}
+
+footer .newsletter-button:hover {
+    background-color: #0056b3;
 }
 
 .newsletter-form input:focus,
@@ -670,38 +628,80 @@ h1, h2 {
     transform: scale(1.05); /* Slightly enlarges the button */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
 }
-
-/* Responsive Design */
+/* Responsive Styles */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
+    body {
+        padding-top: 70px;
     }
 
-    .navbar {
+    .custom-navbar {
+        padding: 10px;
+    }
+
+    .custom-navbar .navbar-nav {
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        text-align: center;
+    }
+
+    .custom-navbar .navbar-nav .nav-link {
+        padding: 10px 0;
+    }
+
+    .search-bar {
+        flex-direction: column; /* Stack input and button */
+        width: 90%; /* Make it span most of the screen width */
+        margin: 10 auto; /* Center the search bar */
     }
 
     .search-bar input {
+        max-width: 100%; /* Ensure full width */
         width: 100%;
-        margin-bottom: 10px;
+        border-radius: 5px; /* Fully rounded corners */
+        margin-bottom: 5px; /* Add spacing below input */
     }
 
     .search-bar button {
-        width: 100%;
-        padding: 12px 0;
+        width: 100%; /* Full width button */
+        border-radius: 5px; /* Fully rounded corners */
+        margin-bottom: 10px;
+    }
+
+    .category-section img {
+        height: auto;
+    }
+
+    .books-section,
+    .category-section {
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
+    .card {
+        margin-bottom: 15px;
     }
 
     footer {
-        padding: 25px 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-}
 
-@media (max-width: 480px) {
-    .container {
-        gap: 15px;
+    footer .footer-section {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    footer .newsletter-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .newsletter-input,
+    footer .newsletter-button {
+        width: 100%;
+        margin-bottom: 10px;
     }
 }
 .modal {
@@ -798,6 +798,64 @@ h1, h2 {
     text-align: center;
 }
 
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .modal-content {
+        flex-direction: column; /* Stack modal content vertically */
+        width: 95%; /* Use almost the full screen width */
+    }
+
+    .modal-body {
+        flex-direction: column; /* Stack image and details vertically */
+        gap: 10px; /* Reduce gap for a cleaner look */
+    }
+
+    .modal-image {
+        width: 100%; /* Ensure the image section spans full width */
+    }
+
+    .modal-image-img {
+        max-height: 250px; /* Restrict height for mobile */
+        object-fit: cover;
+    }
+
+    .modal-details {
+        padding: 10px; /* Reduce padding for mobile */
+    }
+
+    .modal-title {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+
+    .modal-author {
+        font-size: 16px;
+    }
+
+    .modal-description {
+        font-size: 14px;
+    }
+
+    .modal-actions {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Add spacing between buttons */
+        align-items: center; /* Center items */
+    }
+
+    .modal-actions .btn {
+        width: 100%; /* Buttons span full width on mobile */
+        font-size: 14px; /* Adjust font size for buttons */
+    }
+    #modalBadge {
+        order: -1; /* Move badge to the top */
+        margin-bottom: 5px; /* Add space below the badge */
+        text-align: center; /* Center the badge content */
+    }
+
+    #cancelButton {
+        width: 100%; /* Make the button span full width */
+        padding: 12px; /* Adjust padding for better touch support */
+    }
+}
 .btn-secondary {
     background-color: #f44336;
     color: white;

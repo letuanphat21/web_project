@@ -1,139 +1,268 @@
-     /* Custom CSS for styling */
-     body {
-        background-color: #f4f6f9;
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    padding-top: 70px;
+}
+
+/* Navbar Custom Styles */
+.custom-navbar {
+    background-color: #343a40;
+    padding: 0px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.custom-navbar .navbar-brand img {
+    height: 40px;
+    max-width: 100%;
+}
+
+.custom-navbar .navbar-nav .nav-link {
+    color: #f8f9fa !important;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.custom-navbar .navbar-nav .nav-link:hover,
+.custom-navbar .navbar-nav .nav-link.active {
+    color: #5bc0de !important;
+    background-color: rgba(91, 192, 222, 0.1);
+}
+
+.search-bar input {
+    width: 200px;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 6px 15px;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+
+.custom-navbar .btn-primary {
+    background-color: #007bff;
+}
+
+.custom-navbar .btn-outline-primary {
+    color: white;
+}
+
+.custom-navbar .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.vh-100 {
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.card-title,
+.btn-details {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.books-section {
+    margin-top: 30px;
+}
+
+.category-section img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.category-section h1,
+.books-section h1 {
+    margin-top: 40px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-title,
+.card-body p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card {
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 15px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+footer {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    position: relative;
+    height: auto;
+    padding: 20px;
+}
+
+footer a {
+    color: #5bc0de;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #007bff;
+}
+
+footer .newsletter-button {
+    background-color: #007bff;
+    color: white;
+}
+
+footer .newsletter-button:hover {
+    background-color: #0056b3;
+}
+
+.newsletter-form input:focus,
+.newsletter-form button:hover {
+    outline: none;
+}
+
+.newsletter-form {
+    display: flex;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    background: #fff;
+    color: #333;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.newsletter-button {
+    background-color: #3fa1f1;
+    color: white;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.4s ease, transform 0.2s ease;
+    text-wrap: nowrap;
+}
+
+.newsletter-button:hover {
+    background-color: #055abb;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body {
         padding-top: 70px;
     }
 
-    .navbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 10;
-        background-color: #ffffff;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    .custom-navbar {
+        padding: 5px;
     }
 
-    .navbar .search-bar {
+    .custom-navbar .navbar-nav {
         display: flex;
-        align-items: center;
-        width: 400px;
-        /* Đặt độ rộng cho thanh tìm kiếm */
-        margin: 0 auto;
-        /* Căn giữa thanh tìm kiếm */
-    }
-
-    .navbar .search-bar input {
-        flex: 1;
-        border-radius: 25px;
-        padding: 10px 20px;
-        border: 1px solid #ddd;
-    }
-
-    .navbar .search-bar .btn-search {
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 10px;
-        cursor: pointer;
-    }
-
-    .navbar .search-bar .btn-search i {
-        font-size: 18px;
-    }
-
-    .navbar .search-bar .btn-search:hover {
-        background-color: #0056b3;
-    }
-
-    .tab-section {
-        display: flex;
-        justify-content: center;
-        margin: 30px 0;
-    }
-
-    .tab-section .nav {
-        gap: 15px;
-    }
-
-    .slider {
-        margin-top: 20px;
-        margin-bottom: 30px;
-        /* Add margin below slider */
-    }
-
-    .card-title,
-    .btn-details {
-        font-weight: bold;
-        color: #007bff;
-    }
-
-    .books-section {
-        margin-top: 30px;
-        /* Add margin above the featured books section */
-    }
-
-    .category-section h1,
-    .books-section h1 {
-        margin-top: 40px;
+        flex-direction: column;
         text-align: center;
-        font-weight: bold;
-        color: #333;
     }
 
-    .card-title,
-    .card-body p {
-        white-space: nowrap;
-        /* Không cho phép xuống dòng */
-        overflow: hidden;
-        /* Ẩn phần nội dung tràn ra ngoài */
-        text-overflow: ellipsis;
-        /* Thêm dấu "..." khi nội dung quá dài */
+    .custom-navbar .navbar-nav .nav-link {
+        padding: 10px 0;
     }
 
-    /* Hover effect for cards */
+    .search-bar {
+        flex-direction: column; /* Stack input and button */
+        width: 90%; /* Make it span most of the screen width */
+        margin: 10 auto; /* Center the search bar */
+    }
+
+    .search-bar input {
+        max-width: 100%; /* Ensure full width */
+        width: 100%;
+        border-radius: 5px; /* Fully rounded corners */
+        margin-bottom: 5px; /* Add spacing below input */
+    }
+
+    .search-bar button {
+        width: 100%; /* Full width button */
+        border-radius: 5px; /* Fully rounded corners */
+        margin-bottom: 10px;
+    }
+
+    .category-section img {
+        height: auto;
+    }
+
+    .books-section,
+    .category-section {
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
     .card {
-        transition: transform 0.3s ease-in-out;
+        margin-bottom: 15px;
     }
 
-    .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Footer styling */
     footer {
-        background-color: #343a40;
-        color: #ffffff;
-        padding: 40px 0;
-        margin-top: 60px;
-        /* Increased margin-top for spacing */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     footer .footer-section {
-        padding: 20px 0;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
     }
 
-    footer .footer-line {
-        border-top: 1px solid #666;
-        margin-top: 20px;
-        padding-top: 20px;
+    footer .newsletter-form {
+        flex-direction: column;
+        align-items: center;
     }
 
-    footer a {
-        color: #007bff;
-        text-decoration: none;
+    footer .newsletter-input,
+    footer .newsletter-button {
+        width: 100%;
+        margin-bottom: 10px;
     }
+}
 
-    footer a:hover {
-        text-decoration: underline;
-    }
-
-    .footer-logo img {
-        width: 150px;
-    }
+/* Adjust Typography */
+h1, h2, h3 {
+    font-size: calc(1.5rem + 1vw);
+}
