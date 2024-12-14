@@ -29,7 +29,7 @@
     <a href="admin.html" >Control Table</a>
     <a href="listcategory.html">Category</a>
     <a href="locationlibrary.html">Location of Libraries</a>
-    <a href="listBook.html" class="active">List Book</a>
+    <a href="listBook.html" class="active">Books</a>
     <a href="booksBorrowed.html">Books Borrowed</a>
     <a href="booksRetuned.html">Books Returned</a>
     <a href="login.html">Logout</a>
@@ -39,7 +39,13 @@
 <div class="wrapper d-flex">
     <!-- Main Content -->
     <div class="content flex-grow-1">
-      <h1>Book List</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="admin.html">Admin</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Books</li>
+        </ol>
+      </nav>
+      <h1>Books</h1>
       <button id="addBookBtn" class="btn btn-primary mb-3">Add Book</button>
       <table id="bookTable" class="display">
         <thead>
