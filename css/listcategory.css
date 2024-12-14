@@ -58,3 +58,35 @@ body {
   .charts {
     margin-top: 40px;
   }
+
+  /* Wrapper layout */
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* Main content styling */
+.content {
+    padding: 20px;
+    flex-grow: 1;
+    overflow-x: auto;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  #bookTable {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  #addBookBtn {
+    display: inline-block;
+  }
+  
+  .deleteBookBtn {
+    color: white;
+    font-size: 12px;
+  }
+  
