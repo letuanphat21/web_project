@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'index.html'; // Redirect to dashboard
         } else if(email === 'admin@example.com' && password === '123') {
            alert('Login successful!');
-            window.location.href = 'admin.html'
+            window.location.href = 'admin/admin.html'
         }else {
             alert('Invalid email or password!');
         }
