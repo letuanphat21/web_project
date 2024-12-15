@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     const table = $('#bookTable').DataTable();
   
@@ -95,4 +96,5 @@ $(document).ready(function () {
       table.draw(false);
     }
   });
+
   
