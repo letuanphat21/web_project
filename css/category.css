@@ -1,3 +1,4 @@
+
 /* Hide scrollbar for all elements globally */
 * {
     scrollbar-width: none; /* Firefox */
@@ -891,4 +892,5 @@ footer .newsletter-button:hover {
 
 .close:hover {
     color: #000;
+
 }

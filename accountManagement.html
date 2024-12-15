@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Management</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="css/accountManagement.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header d-flex justify-content-between py-3">
+    <div class="left">
+      <h5>Trang Admin</h5>
+    </div>
+    <div class="right">
+      <h5>Hello Admin</h5>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar d-flex flex-column justify-content-between py-4 px-3">
+    <h3 class="text-center mb-4">Admin Panel</h3>
+    <a href="admin.html" >Control Table</a>
+    <a href="listcategory.html">Category</a>
+    <a href="locationlibrary.html" >Location</a>
+    <a href="listBook.html">Books</a>
+    <a href="booksBorrowed.html" >Books Borrowed</a>
+    <a href="booksRetuned.html">Books Returned</a>
+    <a href="login.html">Logout</a>
+    <a href="accountManagement.html" class="active">Account Management</a>
+  </div>
+
+<!-- Wrapper -->
+<div class="wrapper d-flex">
+    <!-- Main Content -->
+    <div class="content flex-grow-1">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="admin.html">Admin</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Books</li>
+        </ol>
+      </nav>
+      <h1>Books</h1>
+      <button id="addBookBtn" class="btn btn-primary mb-3">Add Account</button>
+      <table id="bookTable" class="display">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Actions</th> <!-- Thêm cột "Actions" -->
+          </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>Peter</td><td>peter@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>2</td><td>John</td><td>john@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>3</td><td>Mary</td><td>mary@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>4</td><td>David</td><td>david@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>5</td><td>Sarah</td><td>sarah@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>6</td><td>Michael</td><td>michael@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>7</td><td>Emma</td><td>emma@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>8</td><td>James</td><td>james@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>9</td><td>Lisa</td><td>lisa@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>10</td><td>Robert</td><td>robert@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>11</td><td>Anna</td><td>anna@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>12</td><td>William</td><td>william@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>13</td><td>Emily</td><td>emily@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>14</td><td>Thomas</td><td>thomas@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>15</td><td>Sophie</td><td>sophie@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>16</td><td>Daniel</td><td>daniel@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>17</td><td>Olivia</td><td>olivia@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>18</td><td>Andrew</td><td>andrew@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>19</td><td>Isabella</td><td>isabella@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>20</td><td>Joseph</td><td>joseph@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>21</td><td>Lucy</td><td>lucy@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>22</td><td>Christopher</td><td>christopher@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>23</td><td>Ava</td><td>ava@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>24</td><td>Matthew</td><td>matthew@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>25</td><td>Grace</td><td>grace@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>26</td><td>Ryan</td><td>ryan@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>27</td><td>Victoria</td><td>victoria@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>28</td><td>Benjamin</td><td>benjamin@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>29</td><td>Sophia</td><td>sophia@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+            <tr><td>30</td><td>Nathan</td><td>nathan@gmail.com</td><td><button class="btn btn-danger btn-sm delete-btn">Delete</button> <button class="btn btn-warning btn-sm edit-btn">Edit</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <!-- Modal Add Book -->
+<div class="modal fade" id="addBookModal" tabindex="-1" aria-labelledby="addBookModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addBookModalLabel">Add New Account</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="addBookForm">
+            <div class="mb-3">
+              <label for="bookTitle" class="form-label">Username</label>
+              <input type="text" class="form-control" id="bookTitle" required>
+            </div>
+            <div class="mb-3">
+              <label for="bookAuthor" class="form-label">Email</label>
+              <input type="text" class="form-control" id="bookAuthor" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Account</button> <!-- Add Book button -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Edit Book -->
+  <div class="modal fade" id="editBookModal" tabindex="-1" aria-labelledby="editBookModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editBookModalLabel">Edit Account</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="editBookForm">
+            <div class="mb-3">
+              <label for="editBookTitle" class="form-label">Username</label>
+              <input type="text" class="form-control" id="editBookTitle" required>
+            </div>
+            <div class="mb-3">
+              <label for="editBookAuthor" class="form-label">Email</label>
+              <input type="text" class="form-control" id="editBookAuthor" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button> <!-- Save Changes button -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <script src="js/accountManagement.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
