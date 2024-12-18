@@ -1,60 +1,90 @@
 body {
-    display: flex;
-    flex-direction: column;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #343a40;
-    color: white;
-    padding: 10px 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-  }
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #343a40;
+  color: white;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.sidebar {
+  width: 250px;
+  height: calc(100vh - 56px); /* Adjust height to exclude header */
+  position: fixed;
+  top: 56px;
+  background-color: #343a40;
+  color: white;
+}
+.sidebar a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 10px;
+}
+.sidebar a.active, .sidebar a:hover {
+  background-color: #495057;
+}
+.content {
+  margin-left: 250px;
+  margin-top: 56px; /* Offset for header */
+  padding: 20px;
+  width: calc(100% - 250px);
+}
+.breadcrumb {
+  padding: 10px 15px;
+  border-radius: 0.25rem;
+  margin-bottom: 20px;
+}
+.stats {
+  display: flex;
+  gap: 20px;
+  align-items: start;
+}
+.stat-card {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1;
+}
+.charts {
+  margin-top: 40px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
   .sidebar {
-    width: 250px;
-    height: calc(100vh - 56px); /* Adjust height to exclude header */
-    position: fixed;
-    top: 56px;
-    background-color: #343a40;
-    color: white;
+    width: 200px;
   }
-  .sidebar a {
-    text-decoration: none;
-    color: white;
-    display: block;
+
+  .content {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
     padding: 10px;
   }
-  .sidebar a.active, .sidebar a:hover {
-    background-color: #495057;
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
   }
+
   .content {
-    margin-left: 250px;
-    margin-top: 56px; /* Offset for header */
-    padding: 20px;
-    width: calc(100% - 250px);
+    margin-left: 0;
+    width: 100%;
   }
-  .breadcrumb {
-    padding: 10px 15px;
-    border-radius: 0.25rem;
-    margin-bottom: 20px;
-  }
-  .stats {
-    display: flex;
-    gap: 20px;
-    align-items: start;
-  }
-  .stat-card {
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    flex: 1;
-  }
-  .charts {
-    margin-top: 40px;
-  }
+}
