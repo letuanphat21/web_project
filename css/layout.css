@@ -1,0 +1,25 @@
+/* Hide scrollbar for all elements globally */
+* {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* For webkit-based browsers */
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* Image hover effect */
+.clickable-img {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.clickable-img:hover {
+    transform: scale(1.05);
+}
+
+/* Optional additional styling for modal */
+.modal-body img {
+    max-height: 80vh;
+}
