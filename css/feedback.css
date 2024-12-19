@@ -1,3 +1,4 @@
+
 .rating-group {
     display: flex;
     flex-direction: row-reverse; /* Reverses the order visually */
@@ -22,3 +23,4 @@
 .rating-group input[type="radio"]:checked ~ label {
     color: #ffcc00;
 }
+

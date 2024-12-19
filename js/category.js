@@ -1,3 +1,4 @@
+
 // Array of book objects categorized by genre
 const genres = {
     literature: [
@@ -652,4 +653,5 @@ document.addEventListener('DOMContentLoaded', () => {
             searchBook();
         }
     });
+
 });

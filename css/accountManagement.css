@@ -76,12 +76,12 @@ body {
     margin-bottom: 20px;
   }
   
-  #bookTable {
+  #accountManagementTable {
     width: 100%;
     margin-top: 20px;
   }
 
-  #addBookBtn {
+  #addAccountBtn {
     display: inline-block;
   }
   
