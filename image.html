@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Showcase</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styleguide.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <style>
+        .image-section {
+            margin-top: 50px;
+        }
+
+        .image-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR35FLvdopkSZYZeJwoz3rPfYLfr0lnjGcRhQ&s"
+                    alt="Library Logo" style="height: 50px; width: auto; border-radius: 50%;">
+
+                <p style="color: white; font-size: 40px; margin: 0; margin-left: 10px;">Library</p>
+
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="category.html" id="categoryDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Category</a>
+                        <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+                            <li><a class="dropdown-item" href="booksGenere/literature.html">Literature</a></li>
+                            <li><a class="dropdown-item" href="booksGenere/science.html">Science</a></li>
+                            <li><a class="dropdown-item" href="booksGenere/history.html">History</a></li>
+                            <li><a class="dropdown-item" href="booksGenere/children.html">Children</a></li>
+                            <li><a class="dropdown-item" href="booksGenere/mentality.html">Mentality</a></li>
+                            <li><a class="dropdown-item" href="booksGenere/economy.html">Economy</a></li>
+                            <li><a class="dropdown-item" href="booksGenere/lifeskills.html">Life Skills</a></li>
+                            <li><a class="dropdown-item" href="booksGenere/sport.html">Sport</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="policy.html">Policy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+                    <li class="nav-item"><a class="nav-link " href="typography.html">Style Guide</a></li>
+
+
+                </ul>
+                <div class="search-bar ms-3 d-flex">
+                    <input type="text" class="form-control" placeholder="Search book, author...">
+                    <button class="btn btn-outline-primary">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+                <a href="login.html" class="btn btn-primary ms-3">Login</a>
+                <a href="login.html?form=register" class="btn btn-outline-primary ms-2">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="small-menu-container bg-color d-flex justify-content-center">
+        <ul class="nav">
+
+            <li class="nav-item"><a class="nav-link" href="typography.html">Typography</a></li>
+            <li class="nav-item"><a class="nav-link" href="directory.html">Directory</a></li>
+            <li class="nav-item"><a class="nav-link" href="layout.html">Layout</a></li>
+            <li class="nav-item"><a class="nav-link" href="color.html">Color</a></li>
+            <li class="nav-item"><a class="nav-link  active" href="image.html">Image</a></li>
+
+        </ul>
+    </div>
+
+    <div class="container image-section">
+        <h1 class="text-center">Image Gallery</h1>
+
+        <div class="mt-4">
+            <h2>Team Images</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="image/letuanphat.png" alt="User" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="image/manguyenvu.png" alt="User" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="image/huuthuc.png" alt="User" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="image/ngoctan.png" alt="User" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <h2>Blog Images</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://tse3.mm.bing.net/th?id=OIP.LBnVr738j6TbQtbBa_QmfgHaEH&pid=Api&P=0&h=220" alt="Genre"onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://tse4.mm.bing.net/th?id=OIP.3cljoiU-_QMFCXt58QAFxAHaEK&pid=Api&P=0&h=220" alt="Genre"onclick="openImageModal(this.src)">
+                
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://tse2.mm.bing.net/th?id=OIP.ukmBm8jXXUZi2alMiJUAIwHaDy&pid=Api&P=0&h=220" alt="Genre"onclick="openImageModal(this.src)">
+                        
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://tse1.mm.bing.net/th?id=OIP.KptmQZEb53ZaoiM_4v6TWwHaDt&pid=Api&P=0&h=220" alt="Genre"onclick="openImageModal(this.src)">
+                       
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://tse1.mm.bing.net/th?id=OIP.eaAWW4X4xtOBxLGBFvM1MwHaD4&pid=Api&P=0&h=220" alt="Genre"onclick="openImageModal(this.src)">
+                       
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://tse4.mm.bing.net/th?id=OIP.RKlF5s4sXWvuMkB_1UcAowAAAA&pid=Api&P=0&h=220" alt="Genre"onclick="openImageModal(this.src)">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4">
+            <h2>Slider Images</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="../web_project/image/slider1.webp" alt="Slider"onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="../web_project/image/slider2.webp" alt="Slider"onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="../web_project/image/slider3.webp" alt="Slider"onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="../web_project/image/contactbg.png" alt="Slider"onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="../web_project/image/logo.webp" alt="Slider"onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4">
+            <h2>Book Genre Images</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://langgo.edu.vn/storage/upload/default/images/sport-equipment-concept-1284-13034.jpg" alt="GBook"onclick="openImageModal(this.src)">
+                       
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://t3.ftcdn.net/jpg/04/47/61/20/360_F_447612099_kkGpS4OwuIp1yWSkCdspgca7ly0XVLcR.jpg" alt="GBook"onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://st2.depositphotos.com/2228340/11071/i/450/depositphotos_110712382-stock-photo-economy-as-concept.jpg" alt="GBook"onclick="openImageModal(this.src)">
+                        
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://images.squarespace-cdn.com/content/v1/6321e5461a6d6875d6c183e0/1663165820679-WOG61QVJ5IN5XZEC2TK7/Feature-Mentality.jpg?format=1000w" alt="GBook"onclick="openImageModal(this.src)">
+                        
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc314f650-8e3c-402b-8518-0bf6deed03d4_1000x1000.jpeg" alt="GBook"onclick="openImageModal(this.src)">
+                        
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://img.freepik.com/premium-vector/history-background-signs-symbols-education_53500-1904.jpg" alt="GBook"onclick="openImageModal(this.src)">
+                        
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://img.freepik.com/free-vector/colorful-science-education-background_23-2148490697.jpg?semt=ais_hybrid" alt="GBook"onclick="openImageModal(this.src)">
+                        
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://img.freepik.com/free-vector/watercolor-literature-illustration_52683-81541.jpg" alt="GBook"onclick="openImageModal(this.src)">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <h2>Book Images</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/613znXUaEWL._AC_UL254_SR254,254_.jpg" alt="Book"onclick="openImageModal(this.src)">
+                        
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/71sOqrd6JHL._AC_UL254_SR254,254_.jpghttps://images-na.ssl-images-amazon.com/images/I/71sOqrd6JHL._AC_UL254_SR254,254_.jpg" alt="Book"onclick="openImageModal(this.src)">
+                        
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/91I1KDnK1kL._AC_UL254_SR254,254_.jpghttps://images-na.ssl-images-amazon.com/images/I/91I1KDnK1kL._AC_UL254_SR254,254_.jpg" alt="Book"onclick="openImageModal(this.src)">
+                        
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/51+ROKEYviL._AC_UL254_SR254,254_.jpghttps://images-na.ssl-images-amazon.com/images/I/51+ROKEYviL._AC_UL254_SR254,254_.jpg" alt="Book"onclick="openImageModal(this.src)">
+                        
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/81mFBsBFYXL._AC_UL254_SR254,254_.jpg" alt="Book" onclick="openImageModal(this.src)">
+                 
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/71WC3z4Wt0L._AC_UL254_SR254,254_.jpg" alt="Book" onclick="openImageModal(this.src)">
+                  
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/71K+9YJ7VbL._AC_UL254_SR254,254_.jpg" alt="Book" onclick="openImageModal(this.src)">
+                   
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/71omst60IOL._AC_UL254_SR254,254_.jpg" alt="Book" onclick="openImageModal(this.src)">
+                
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/91VztVjWK2L._AC_UL254_SR254,254_.jpg" alt="Book" onclick="openImageModal(this.src)">
+                  
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/81ANaVZk5LL._AC_UL254_SR254,254_.jpg" alt="Book" onclick="openImageModal(this.src)">
+                  
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/81AgoOPzO6L._AC_UL254_SR254,254_.jpg" alt="Book" onclick="openImageModal(this.src)">
+                 
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/718SstStV3L._AC_UL254_SR254,254_.jpg" alt="Book" onclick="openImageModal(this.src)">
+                   
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHF3lLOKwzq5pB1DAXuvHovgmQAnQ7YD8CFQ&s" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                      <img src="https://cdn11.bigcommerce.com/s-hvyeu5c5mp/images/stencil/1280x1280/products/286/562/ADU-NL1__90162.1633990021.jpg?c=1" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                      <img src="https://m.media-amazon.com/images/I/51hZ-LLWMNL._AC_UF1000,1000_QL80_.jpg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://bizweb.dktcdn.net/100/326/228/products/1984-by-george-orwell-bookworm-hanoi-038adcb4-d1cc-49ee-85eb-50f188229ecf.jpg?v=1580974089733" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://cdn2.penguin.com.au/covers/original/9780141949055.jpg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://cdn2.penguin.com.au/covers/original/9781784752637.jpg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://m.media-amazon.com/images/I/8125BDk3l9L.jpg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/vi/8/85/Moby_Dick-C%C3%A1_voi_tr%E1%BA%AFng_%28s%C3%A1ch%29.jpg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://m.media-amazon.com/images/I/91ebghaV-eL._AC_UF1000,1000_QL80_.jpg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://m.media-amazon.com/images/I/61CXvkfdXlL._AC_UF1000,1000_QL80_.jpg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://m.media-amazon.com/images/I/710C5x4MzwL.jpg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://m.media-amazon.com/images/I/81coyP8S-ZL._AC_UF1000,1000_QL80_.jpg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/6/6c/Cover_Universe_in_a_nutshell.jpg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://librireading.com/wp-content/uploads/2020/10/A-brief-history-of-time.jpeg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://cdn0.fahasa.com/media/catalog/product/7/1/713jiomo3ul.jpg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://m.media-amazon.com/images/I/91A1-6ny+pL.jpg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://m.media-amazon.com/images/I/61V8g4GgqdL._AC_UF1000,1000_QL80_.jpg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://m.media-amazon.com/images/I/71TYHByzngL._AC_UF1000,1000_QL80_.jpg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://m.media-amazon.com/images/I/71Zb-D8NaGL.jpg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://m.media-amazon.com/images/I/513xtke0UHL._AC_UF1000,1000_QL80_.jpg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://thebookland.vn/thumbnail_1200/9780241003008.jpg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBeY8rdJ186ZG5eoAnu7PG2DqOBWqgSub8lg&s" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJGrHEGLyv4un4_lNiJkdyTfsEV4InKSCxgg&s" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgjZT2AUiimki6h88EfeVtD53WYa8qgWIFig&s" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/6/64/SnowyDayKeats.jpg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="image-card text-center">
+                        <img src="https://m.media-amazon.com/images/I/71BXMB8-ZwL._AC_UF894,1000_QL80_.jpg" onclick="openImageModal(this.src)">
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="" alt="Phóng to ảnh" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Font Awesome for icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();  // Initialize AOS animations
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function openImageModal(src) {
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = src;
+            const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+            imageModal.show();
+        }
+    </script>
+
+</body>
+</html>
