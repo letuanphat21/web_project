@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Directory</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -13,28 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styleguide.css">
-    <style>
-        .color-box {
-            background-color: #fff;
-            width: 150px;
-            text-align: center;
-            padding: 1rem;
-            margin: 0.5rem;
-            border-radius: 5px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .color-box.shadow-lg {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .color-box.hover-up:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-        }
-    </style>
 </head>
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
         <div class="container-fluid">
@@ -72,7 +50,9 @@
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="policy.html">Policy</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
                     <li class="nav-item"><a class="nav-link " href="typography.html">Style Guide</a></li>
+
 
                 </ul>
                 <div class="search-bar ms-3 d-flex">
@@ -86,146 +66,62 @@
             </div>
         </div>
     </nav>
+
     <div class="small-menu-container bg-color d-flex justify-content-center">
         <ul class="nav">
-            <li class="nav-item"><a class="nav-link " href="typography.html">Typography</a></li>
-
-            <li class="nav-item"><a class="nav-link" href="directory.html">Directory</a></li>
-
-            <li class="nav-item"><a class="nav-link" href="layout.html">Layout</a></li>
-            <li class="nav-item"><a class="nav-link active" href="color.html">Color</a></li>
+            <li class="nav-item"><a class="nav-link" href="typography.html">Typography</a></li>
+            <li class="nav-item"><a class="nav-link active" href="directory.html">Directory</a></li>
+            <li class="nav-item"><a class="nav-link " href="layout.html">Layout</a></li>
+            <li class="nav-item"><a class="nav-link" href="color.html">Color</a></li>
             <li class="nav-item"><a class="nav-link" href="image.html">Image</a></li>
+
         </ul>
     </div>
 
+    <!-- Content -->
+    <div class="container my-5">
+        <h2 class="mb-4">Project Directory Structure</h2>
+        
+        <div class="bg-light p-4 rounded">
+            <pre class="directory-structure">
+web_project/
+│
+├── admin/                   # Directory containing files related to the admin page
+│   ├── dashboard.html       # Main interface of the admin page
+│   └── admin-style.css      # CSS file specific to the admin page
+│
+├── booksGenere/             # Directory containing HTML files related to book genres
+│   ├── fiction.html         # Interface for the "Fiction" genre
+│   └── non-fiction.html     # Interface for the "Non-Fiction" genre
+│
+├── css/                     # Directory containing shared CSS files
+│   ├── style.css            # Main CSS file of the project
+│   └── theme.css            # Additional theme CSS file
+│
+├── image/                   # Directory containing image assets
+│   ├── logo.png             # Website logo
+│   └── banner.jpg           # Banner image
+│
+├── js/                      # Directory containing JavaScript files
+│   └── app.js               # Main JavaScript file
+│
+├── index.html               # Main HTML file (Homepage)
+├── about.html               # HTML file for the "About" page
+└── (x).html                 # Many other HTML file</pre>
+        </div>
 
-
-    <main class="container my-5">
-        <section id="background-colors" class="mb-5">
-            <h2>Background Colors</h2>
-            <div class="d-flex flex-wrap">
-                <div class="p-3 m-2 color-box shadow-lg hover-up" style="background-color: #f4f6f9;">
-                    #f4f6f9
-                </div>
-                <div class="p-3 m-2 color-box shadow-lg hover-up" style="background-color: #ffffff;">
-                    #ffffff
-                </div>
-            </div>
-        </section>
-        <section id="header-colors" class="mb-5">
-            <h2>Header Colors</h2>
-            <div class="d-flex flex-wrap">
-                <div class="p-3 m-2 text-white color-box shadow-lg hover-up" style="background-color: #343a40;">
-                    #343a40
-                </div>
-
-                <div class="p-3 m-2 text-white color-box shadow-lg hover-up" style="background-color:  #f0f0f0;">
-                    #f0f0f0
-                </div>
-               
-            </div>
-        </section>
-
-        <section id="footer-colors" class="mb-5">
-            <h2>Footer Colors</h2>
-            <div class="d-flex flex-wrap">
-                <div class="p-3 m-2 text-white color-box shadow-lg hover-up" style="background-color: #343a40;">
-                    #343a40
-                </div>
-            </div>
-        </section>
-        <section id="header-colors" class="mb-5">
-            <h2>Active Colors</h2>
-            <div class="d-flex flex-wrap">
-                <div class="p-3 m-2 text-white color-box shadow-lg hover-up" style="background-color: #384850;">
-                    #384850
-                </div>
-                <div class="p-3 m-2 text-white color-box shadow-lg hover-up" style="background-color: #000000;">
-                    #000000
-                </div>
-            </div>
-        </section>
-
-        <section id="typography-colors" class="mb-5">
-            <h2>Typography Colors</h2>
-            <div class="d-flex flex-wrap">
-                <div class="p-3 m-2 color-box shadow-lg hover-up" style="background-color: #ffffff;">
-                    #212529
-                </div>
-                <div class="p-3 m-2 color-box shadow-lg hover-up" style="background-color: #ffffff;">
-                    #ffffff
-                </div>
-                <div class="p-3 m-2 color-box shadow-lg hover-up" style="background-color: #9b9d9e;">
-                    #9b9d9e
-                </div>
-                <div class="p-3 m-2 color-box shadow-lg hover-up" style="background-color: #5bc0de;">
-                    #5bc0de
-                </div>
-                <div class="p-3 m-2 color-box shadow-lg hover-up text-white" style="background-color: #000000;">
-                    #000000
-                </div>
-                <div class="p-3 m-2 color-box shadow-lg hover-up" style="background-color: #3fa1f1;">
-                    #3fa1f1
-                </div>
-                <div class="p-3 m-2 color-box shadow-lg hover-up" style="background-color: #bbbbbb;">
-                    #bbbbbb
-                </div>
-                <div class="p-3 m-2 color-box shadow-lg hover-up" style="background-color: #007bff;">
-                    #007bff
-                </div>
-                <div class="p-3 m-2 color-box shadow-lg hover-up" style="background-color: #6c757d;">
-                    #6c757d
-                </div>
-                <div class="p-3 m-2 color-box shadow-lg hover-up" style="background-color: #005673;">
-                    #005673
-                </div>
-                <div class="p-3 m-2 color-box shadow-lg hover-up" style="background-color: #8e7037;">
-                    #8e7037
-                </div>
-            </div>
-        </section>
-
-        <section id="button-colors" class="mb-5">
-            <h2>Button Colors</h2>
-            <div class="d-flex flex-wrap">
-                <div class="p-3 m-2 text-white color-box shadow-lg hover-up" style="background-color: #007bff;">
-                    #007bff
-                </div>
-                <div class="p-3 m-2 text-white color-box shadow-lg hover-up" style="background-color: #6c757d;">
-                    #6c757d
-                </div>
-                <div class="p-3 m-2 color-box shadow-lg hover-up" style="background-color: #ffffff; color: black;">
-                    #ffffff
-                </div>
-                <div class="p-3 m-2 text-white color-box shadow-lg hover-up" style="background-color: #0069d9;">
-                    #0069d9
-                </div>
-                <div class="p-3 m-2 text-white color-box shadow-lg hover-up" style="background-color: #198754;">
-                    #198754
-                </div>
-                <div class="p-3 m-2 text-white color-box shadow-lg hover-up" style="background-color: #ffc107;">
-                    #ffc107
-                </div>
-                <div class="p-3 m-2 text-white color-box shadow-lg hover-up" style="background-color: #dc3545;">
-                    #dc3545
-                </div>
-            </div>
-        </section>
-
-       
-    </main>
-
-
-
-
-
-
-
-
-
-
-
-
+        <div class="mt-4">
+            <h3>Directory Structure Description:</h3>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>admin/</strong> - Contains files related to the admin interface</li>
+                <li class="list-group-item"><strong>booksGenere/</strong> - Contains HTML files for different book genres</li>
+                <li class="list-group-item"><strong>css/</strong> - Contains shared CSS files for the project</li>
+                <li class="list-group-item"><strong>image/</strong> - Stores website images and assets</li>
+                <li class="list-group-item"><strong>js/</strong> - Contains JavaScript files</li>
+                <li class="list-group-item"><strong>HTML files</strong> - Main pages of the website</li>
+            </ul>
+        </div>
+    </div>
     <!-- Footer -->
     <footer style="background-color: #343a40; color: #fff; padding: 20px; margin-top: 30px; font-size: 16px;">
         <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 20px;"
@@ -310,35 +206,20 @@
             © 2024 Group2. All rights reserved.
         </div>
     </footer>
-
-    <!-- Modal chung -->
-    <div class="modal fade" id="bookModal" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+    <!-- Image Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="bookModalLabel">Book Details</h5>
+                    <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body d-flex">
-                    <!-- Bên trái: Ảnh -->
-                    <div class="col-md-6">
-                        <img id="modal-book-img" src="" alt="Book Image" class="modal-img img-fluid">
-                    </div>
-                    <!-- Bên phải: Thông tin -->
-                    <div class="col-md-6">
-                        <h5 id="modal-book-title"></h5>
-                        <p><strong>Author:</strong> <span id="modal-book-author"></span></p>
-                        <p><strong>Year:</strong> <span id="modal-book-year"></span></p>
-                        <p><strong>Status:</strong> <span id="modal-book-status"></span></p>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <div class="modal-body text-center">
+                    <img src="" id="modalImage" alt="Preview" class="img-fluid">
                 </div>
             </div>
         </div>
     </div>
-    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -349,6 +230,8 @@
     <script>
         AOS.init();  // Initialize AOS animations
     </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/layout.js"></script>
 </body>
-
 </html>

@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     // Select all clickable images
     const images = document.querySelectorAll('.clickable-img');
@@ -11,3 +12,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+

@@ -1,4 +1,5 @@
 
+
 /* Image hover effect */
 .clickable-img {
     cursor: pointer;
@@ -13,3 +14,4 @@
 .modal-body img {
     max-height: 80vh;
 }
+
