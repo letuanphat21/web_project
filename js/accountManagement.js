@@ -1,98 +1,82 @@
 $(document).ready(function () {
-    const table = $('#bookTable').DataTable();
+    const table = $('#accountTable').DataTable();
   
-    // Mở modal khi nhấn nút "Add Book"
-    $('#addBookBtn').on('click', function () {
-      $('#addBookModal').modal('show');
-      $('#addBookModalLabel').text('Add New Book'); // Tiêu đề modal khi thêm
-      $('#addBookForm')[0].reset(); // Reset form
-      $('#addBookForm').data('edit-mode', false); // Chế độ thêm mới
+    // Mở modal khi nhấn nút "Add Account"
+    $('#addAccountBtn').on('click', function () {
+      $('#addAccountModal').modal('show');
+      $('#addAccountModalLabel').text('Add New Account');
+      $('#addAccountForm')[0].reset();
+      $('#addAccountForm').data('edit-mode', false);
     });
   
-    // Khi gửi form, thêm sách mới vào bảng
-    $('#addBookForm').on('submit', function (e) {
-      e.preventDefault(); // Ngừng hành động mặc định của form
+    // Khi gửi form, thêm tài khoản mới vào bảng
+    $('#addAccountForm').on('submit', function (e) {
+      e.preventDefault();
   
-      const title = $('#bookTitle').val();
-      const author = $('#bookAuthor').val();
-      const year = $('#bookYear').val();
-      const genre = $('#bookGenre').val();
+      const username = $('#accountUsername').val();
+      const email = $('#accountEmail').val();
   
-      // Thêm sách mới vào bảng
+      // Thêm tài khoản mới vào bảng
       table.row.add([
-        table.rows().count() + 1,  // Tự động tính toán ID
-        title,
-        author,
-        year,
-        genre,
+        table.rows().count() + 1,
+        username,
+        email,
         `<button class="btn btn-danger btn-sm delete-btn">Delete</button> 
-         <button class="btn btn-warning btn-sm edit-btn">Edit</button>` // Nút Edit
+         <button class="btn btn-warning btn-sm edit-btn">Edit</button>`
       ]).draw(false);
   
-      // Đóng modal
-      $('#addBookModal').modal('hide');
-      $('#addBookForm')[0].reset(); // Reset form sau khi thêm
+      $('#addAccountModal').modal('hide');
+      $('#addAccountForm')[0].reset();
     });
   
-    // Xử lý sự kiện sửa sách khi nhấn nút "Edit"
-    $('#bookTable').on('click', '.edit-btn', function () {
+    // Xử lý sự kiện sửa tài khoản
+    $('#accountTable').on('click', '.edit-btn', function () {
       const row = $(this).closest('tr');
       const data = table.row(row).data();
   
-      // Mở modal và điền dữ liệu vào form
-      $('#editBookTitle').val(data[1]);
-      $('#editBookAuthor').val(data[2]);
-      $('#editBookYear').val(data[3]);
-      $('#editBookGenre').val(data[4]);
+      $('#editAccountUsername').val(data[1]);
+      $('#editAccountEmail').val(data[2]);
   
-      // Đặt dữ liệu row vào modal để sử dụng khi chỉnh sửa
-      $('#editBookForm').data('edit-mode', true);
-      $('#editBookForm').data('row', row);
+      $('#editAccountForm').data('edit-mode', true);
+      $('#editAccountForm').data('row', row);
   
-      $('#editBookModal').modal('show');
-      $('#editBookModalLabel').text('Edit Book'); // Tiêu đề modal khi sửa
+      $('#editAccountModal').modal('show');
+      $('#editAccountModalLabel').text('Edit Account');
     });
   
-    // Khi gửi form sửa sách
-    $('#editBookForm').on('submit', function (e) {
-      e.preventDefault(); // Ngừng hành động mặc định của form
+    // Khi gửi form sửa tài khoản
+    $('#editAccountForm').on('submit', function (e) {
+      e.preventDefault();
   
-      const title = $('#editBookTitle').val();
-      const author = $('#editBookAuthor').val();
-      const year = $('#editBookYear').val();
-      const genre = $('#editBookGenre').val();
+      const username = $('#editAccountUsername').val();
+      const email = $('#editAccountEmail').val();
   
-      // Chỉnh sửa sách hiện tại
-      const row = $('#editBookForm').data('row');
+      const row = $('#editAccountForm').data('row');
       table.row(row).data([
-        row.index() + 1,  // Cập nhật lại ID
-        title,
-        author,
-        year,
-        genre,
+        row.index() + 1,
+        username,
+        email,
         `<button class="btn btn-danger btn-sm delete-btn">Delete</button> 
-         <button class="btn btn-warning btn-sm edit-btn">Edit</button>`  // Nút Edit
+         <button class="btn btn-warning btn-sm edit-btn">Edit</button>`
       ]).draw();
   
-      // Đóng modal
-      $('#editBookModal').modal('hide');
+      $('#editAccountModal').modal('hide');
     });
   
-    // Xử lý sự kiện xóa sách khi nhấn nút "Xóa"
-    $('#bookTable').on('click', '.delete-btn', function () {
+    // Xử lý sự kiện xóa tài khoản
+    $('#accountTable').on('click', '.delete-btn', function () {
       const row = $(this).closest('tr');
-      if (confirm('Are you sure you want to delete this book?')) {
-        table.row(row).remove().draw(); // Xóa hàng khỏi bảng
-        updateRowNumbers(table); // Cập nhật lại số thứ tự ID
+      if (confirm('Are you sure you want to delete this account?')) {
+        table.row(row).remove().draw();
+        updateRowNumbers(table);
       }
     });
   
-    // Hàm cập nhật lại số thứ tự ID
     function updateRowNumbers(table) {
       table.rows().every(function (rowIdx, tableLoop, rowLoop) {
-        this.cell(rowIdx, 0).data(rowIdx + 1); // Cập nhật lại ID cho cột "ID"
+        this.cell(rowIdx, 0).data(rowIdx + 1);
       });
       table.draw(false);
     }
-  });
+});
   
